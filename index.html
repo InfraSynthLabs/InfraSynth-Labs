@@ -26,6 +26,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
@@ -58,6 +62,8 @@
       width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
       padding: 28px 0 64px;
+      position: relative;
+      z-index: 1;
     }
 
     header {
@@ -80,8 +86,7 @@
       width: 36px;
       height: 36px;
       border-radius: 12px;
-      background:
-        linear-gradient(135deg, var(--accent), var(--accent-2));
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
       box-shadow: 0 0 32px rgba(217, 48, 79, 0.35);
       display: grid;
       place-items: center;
@@ -138,6 +143,7 @@
     .gradient-text {
       background: linear-gradient(135deg, #ffffff, #c9d4e5 42%, #d9304f 80%);
       -webkit-background-clip: text;
+      background-clip: text;
       color: transparent;
     }
 
@@ -180,34 +186,83 @@
     .terminal-card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 24px;
+      border-radius: 18px;
       box-shadow: var(--shadow);
       overflow: hidden;
       backdrop-filter: blur(14px);
     }
 
-    .terminal-top {
+    .linux-window-top {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 14px 16px;
-      background: rgba(255, 255, 255, 0.04);
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 12px;
+      background: linear-gradient(180deg, #1c2430, #111827);
       border-bottom: 1px solid var(--border);
     }
 
-    .dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--accent);
+    .window-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
     }
 
-    .dot:nth-child(2) {
-      background: #f59e0b;
+    .linux-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 900;
+      flex: 0 0 auto;
     }
 
-    .dot:nth-child(3) {
-      background: var(--green);
+    .window-title {
+      color: #dbeafe;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .window-menu {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #8b98aa;
+      font-size: 0.78rem;
+      flex: 0 0 auto;
+    }
+
+    .window-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: 0 0 auto;
+    }
+
+    .window-button {
+      width: 26px;
+      height: 22px;
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: #aab7c8;
+      font-size: 0.78rem;
+      line-height: 1;
+    }
+
+    .window-button.close {
+      color: #fda4af;
     }
 
     .terminal-body {
@@ -215,6 +270,10 @@
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
       font-size: 0.92rem;
       color: #b8c7d9;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        #070b12;
+      background-size: 100% 28px;
     }
 
     .line {
@@ -376,6 +435,18 @@
         align-items: start;
         flex-direction: column;
       }
+
+      .window-menu {
+        display: none;
+      }
+
+      .linux-window-top {
+        gap: 10px;
+      }
+
+      .window-title {
+        font-size: 0.75rem;
+      }
     }
   </style>
 </head>
@@ -421,14 +492,28 @@
         </div>
 
         <div class="terminal-card">
-          <div class="terminal-top">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+          <div class="linux-window-top">
+            <div class="window-left">
+              <div class="linux-icon">▣</div>
+              <div class="window-title">infra@synth: ~/lab</div>
+            </div>
+
+            <div class="window-menu">
+              <span>File</span>
+              <span>Edit</span>
+              <span>View</span>
+              <span>Terminal</span>
+            </div>
+
+            <div class="window-controls">
+              <span class="window-button">−</span>
+              <span class="window-button">□</span>
+              <span class="window-button close">×</span>
+            </div>
           </div>
 
           <div class="terminal-body">
-            <div class="line"><span class="prompt">infra@synth</span>:<span class="cmd">~$</span> whoami</div>
+            <div class="line"><span class="prompt">infra@synth</span>:<span class="cmd">~/lab$</span> whoami</div>
             <div class="line">security-focused infrastructure builder</div>
             <div class="line comment"># Current focus</div>
             <div class="line">networking • firewalls • Linux • virtualization</div>
@@ -514,7 +599,9 @@
         <div class="grid">
           <article class="card">
             <h3>Infrastructure</h3>
-            <p>Proxmox, Ubuntu Server, Linux administration, backups, and internal services.</p>
+            <p>
+              Proxmox, Ubuntu Server, Linux administration, backups, and internal services.
+            </p>
             <div class="tag-row">
               <span class="tag">Proxmox</span>
               <span class="tag">Ubuntu</span>
@@ -524,7 +611,9 @@
 
           <article class="card">
             <h3>Networking</h3>
-            <p>pfSense, Cisco switching, VLANs, DNS, DHCP, routing, and firewall policies.</p>
+            <p>
+              pfSense, Cisco switching, VLANs, DNS, DHCP, routing, and firewall policies.
+            </p>
             <div class="tag-row">
               <span class="tag">pfSense</span>
               <span class="tag">Cisco</span>
@@ -534,7 +623,9 @@
 
           <article class="card">
             <h3>Security</h3>
-            <p>Least privilege, segmentation, public service isolation, logging, and monitoring.</p>
+            <p>
+              Least privilege, segmentation, public service isolation, logging, and monitoring.
+            </p>
             <div class="tag-row">
               <span class="tag">Segmentation</span>
               <span class="tag">Hardening</span>
@@ -596,7 +687,9 @@
         <div class="grid">
           <article class="card">
             <h3>GitHub</h3>
-            <p>View repositories, documentation, and public project work.</p>
+            <p>
+              View repositories, documentation, and public project work.
+            </p>
             <a class="project-link" href="https://github.com/InfraSynthLabs" target="_blank" rel="noopener noreferrer">
               github.com/InfraSynthLabs →
             </a>
@@ -604,7 +697,9 @@
 
           <article class="card">
             <h3>Portfolio</h3>
-            <p>This site will become the central public hub for InfraSynth Labs.</p>
+            <p>
+              This site will become the central public hub for InfraSynth Labs.
+            </p>
             <a class="project-link" href="https://infrasynthlabs.com">
               infrasynthlabs.com →
             </a>
@@ -612,7 +707,9 @@
 
           <article class="card">
             <h3>Status</h3>
-            <p>Currently building the foundation: site, DNS, lab documentation, and project structure.</p>
+            <p>
+              Currently building the foundation: site, DNS, lab documentation, and project structure.
+            </p>
           </article>
         </div>
       </section>
