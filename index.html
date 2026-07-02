@@ -1,12 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InfraSynth Labs</title>
+
+  <style>
+    :root {
+      --bg: #07090d;
+      --bg-soft: #0d1118;
+      --card: rgba(18, 24, 34, 0.78);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #e8eef8;
+      --muted: #9aa7b8;
+      --accent: #d9304f;
+      --accent-2: #7c3aed;
+      --blue: #38bdf8;
+      --green: #34d399;
+      --shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(217, 48, 79, 0.18), transparent 34%),
+        radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 30%),
+        linear-gradient(135deg, #07090d 0%, #0a0f18 45%, #09070d 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 14px 0 48px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 32px rgba(217, 48, 79, 0.35);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 32px;
+      align-items: center;
+      min-height: 520px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 22px;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 16px var(--green);
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+      margin-bottom: 24px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff, #c9d4e5 42%, #d9304f 80%);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      padding: 13px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--accent), #9f1239);
+      box-shadow: 0 16px 40px rgba(217, 48, 79, 0.28);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .terminal-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+    }
+
+    .terminal-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .dot:nth-child(2) {
+      background: #f59e0b;
+    }
+
+    .dot:nth-child(3) {
+      background: var(--green);
+    }
+
+    .terminal-body {
+      padding: 22px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.92rem;
+      color: #b8c7d9;
+    }
+
+    .line {
+      margin-bottom: 12px;
+    }
+
+    .prompt {
+      color: var(--green);
+    }
+
+    .cmd {
+      color: var(--blue);
+    }
+
+    .comment {
+      color: #7c8798;
+    }
+
+    .section {
+      margin-top: 84px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      max-width: 520px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.82rem;
+    }
+
+    .wide-card {
+      grid-column: span 2;
+    }
+
+    .project-link {
+      display: inline-flex;
+      margin-top: 18px;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .project-link:hover {
+      color: var(--blue);
+    }
+
+    .status-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .status-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .status-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .status-item span:first-child {
+      color: var(--muted);
+    }
+
+    .status-item span:last-child {
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 84px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 860px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wide-card {
+        grid-column: span 1;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>InfraSynth Labs</h1>
-  <p>Infrastructure • Networking • Security</p>
-  <p>This site documents my infrastructure, networking, and security lab projects.</p>
+  <div class="page">
+    <header>
+      <a class="logo" href="#">
+        <div class="logo-mark">I</div>
+        <span>InfraSynth Labs</span>
+      </a>
+
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#lab">Lab Stack</a>
+        <a href="#focus">Focus</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="badge">
+            <span class="pulse"></span>
+            Infrastructure lab online
+          </div>
+
+          <h1>
+            <span class="gradient-text">InfraSynth</span><br />
+            Labs
+          </h1>
+
+          <p class="subtitle">
+            A technical portfolio focused on infrastructure, networking, security,
+            self-hosting, segmentation, and practical systems administration.
+          </p>
+
+          <div class="buttons">
+            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button secondary" href="#lab">Explore Lab Stack</a>
+          </div>
+        </div>
+
+        <div class="terminal-card">
+          <div class="terminal-top">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+
+          <div class="terminal-body">
+            <div class="line"><span class="prompt">infra@synth</span>:<span class="cmd">~$</span> whoami</div>
+            <div class="line">security-focused infrastructure builder</div>
+            <div class="line comment"># Current focus</div>
+            <div class="line">networking • firewalls • Linux • virtualization</div>
+            <div class="line comment"># Lab status</div>
+            <div class="line">proxmox: planned</div>
+            <div class="line">pfsense: planned</div>
+            <div class="line">docker: active learning</div>
+            <div class="line">security: in progress</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-heading">
+          <h2>Projects</h2>
+          <p>
+            Practical lab projects designed around real infrastructure concepts:
+            segmentation, service isolation, firewalling, monitoring, and documentation.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <h3>Network Segmentation Design</h3>
+            <p>
+              A documented VLAN and firewall design separating trusted devices,
+              servers, guest systems, IoT devices, public services, and management interfaces.
+            </p>
+            <div class="tag-row">
+              <span class="tag">VLANs</span>
+              <span class="tag">Firewall Rules</span>
+              <span class="tag">DMZ</span>
+              <span class="tag">Least Privilege</span>
+            </div>
+            <a class="project-link" href="#">Coming soon →</a>
+          </article>
+
+          <article class="card">
+            <h3>pfSense Firewall Lab</h3>
+            <p>
+              Firewall, routing, DHCP, DNS, NAT, VPN, and segmented lab traffic.
+            </p>
+            <div class="tag-row">
+              <span class="tag">pfSense</span>
+              <span class="tag">Routing</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Docker Services</h3>
+            <p>
+              Containerized services for internal tools, game servers, dashboards,
+              and future monitoring systems.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Docker</span>
+              <span class="tag">Linux</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Public Service Isolation</h3>
+            <p>
+              Designing safer hosting patterns for public services without exposing
+              private devices or management interfaces.
+            </p>
+            <div class="tag-row">
+              <span class="tag">DMZ</span>
+              <span class="tag">DNS</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="lab">
+        <div class="section-heading">
+          <h2>Lab Stack</h2>
+          <p>
+            Tools and systems used to build, test, secure, and document the lab environment.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Infrastructure</h3>
+            <p>Proxmox, Ubuntu Server, Linux administration, backups, and internal services.</p>
+            <div class="tag-row">
+              <span class="tag">Proxmox</span>
+              <span class="tag">Ubuntu</span>
+              <span class="tag">Linux</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Networking</h3>
+            <p>pfSense, Cisco switching, VLANs, DNS, DHCP, routing, and firewall policies.</p>
+            <div class="tag-row">
+              <span class="tag">pfSense</span>
+              <span class="tag">Cisco</span>
+              <span class="tag">VLANs</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Security</h3>
+            <p>Least privilege, segmentation, public service isolation, logging, and monitoring.</p>
+            <div class="tag-row">
+              <span class="tag">Segmentation</span>
+              <span class="tag">Hardening</span>
+              <span class="tag">Monitoring</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="focus">
+        <div class="section-heading">
+          <h2>Current Focus</h2>
+          <p>
+            Building a professional infrastructure portfolio while developing deeper
+            networking and security skills.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <h3>Professional Direction</h3>
+            <p>
+              InfraSynth Labs is focused on network and security infrastructure:
+              systems that are practical, documented, segmented, and built with real-world operations in mind.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="status-list">
+              <div class="status-item">
+                <span>Security+</span>
+                <span>In Progress</span>
+              </div>
+              <div class="status-item">
+                <span>CCNA</span>
+                <span>Next Goal</span>
+              </div>
+              <div class="status-item">
+                <span>Portfolio</span>
+                <span>Building</span>
+              </div>
+              <div class="status-item">
+                <span>Homelab</span>
+                <span>Expanding</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="section-heading">
+          <h2>Contact</h2>
+          <p>
+            Project writeups, diagrams, and documentation will be added as the lab develops.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>GitHub</h3>
+            <p>View repositories, documentation, and public project work.</p>
+            <a class="project-link" href="https://github.com/InfraSynthLabs" target="_blank" rel="noopener noreferrer">
+              github.com/InfraSynthLabs →
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>Portfolio</h3>
+            <p>This site will become the central public hub for InfraSynth Labs.</p>
+            <a class="project-link" href="https://infrasynthlabs.com">
+              infrasynthlabs.com →
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>Status</h3>
+            <p>Currently building the foundation: site, DNS, lab documentation, and project structure.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 InfraSynth Labs</span>
+      <span>Infrastructure • Networking • Security</span>
+    </footer>
+  </div>
 </body>
 </html>
