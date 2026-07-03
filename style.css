@@ -41,17 +41,17 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at top left, rgba(217, 31, 61, 0.22), transparent 34%),
-    radial-gradient(circle at bottom right, rgba(127, 16, 35, 0.22), transparent 35%),
-    linear-gradient(135deg, #030304 0%, #08080a 45%, #120409 100%);
+    radial-gradient(circle at 18% 10%, rgba(217, 31, 61, 0.2), transparent 30%),
+    radial-gradient(circle at 85% 18%, rgba(127, 16, 35, 0.22), transparent 34%),
+    linear-gradient(135deg, #020203 0%, #08080a 48%, #120408 100%);
 }
 
-/* Carbon fiber background */
+/* Tight woven carbon fiber background */
 
 body::before {
   content: "";
@@ -60,21 +60,47 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    linear-gradient(45deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.035) 75%),
-    linear-gradient(45deg, rgba(0, 0, 0, 0.7) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.7) 75%),
-    linear-gradient(-45deg, rgba(255, 255, 255, 0.025) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.025) 75%),
-    linear-gradient(-45deg, rgba(0, 0, 0, 0.55) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.55) 75%);
-  background-size: 24px 24px;
-  background-position:
-    0 0,
-    12px 12px,
-    0 12px,
-    12px 0;
-  opacity: 0.55;
-  mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.9) 58%, transparent 95%);
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.045) 0px,
+      rgba(255, 255, 255, 0.045) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0, 0, 0, 0.72) 0px,
+      rgba(0, 0, 0, 0.72) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 0px,
+      rgba(255, 255, 255, 0.025) 2px,
+      transparent 2px,
+      transparent 12px
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(0, 0, 0, 0.42)
+    );
+  background-size:
+    18px 18px,
+    18px 18px,
+    24px 24px,
+    auto;
+  opacity: 0.42;
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    rgba(0, 0, 0, 0.92) 55%,
+    transparent 96%
+  );
 }
 
-/* Red atmospheric overlay */
+/* Red-black lighting overlay */
 
 body::after {
   content: "";
@@ -83,10 +109,14 @@ body::after {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 18% 12%, rgba(217, 31, 61, 0.16), transparent 30%),
-    radial-gradient(circle at 85% 5%, rgba(255, 47, 85, 0.08), transparent 28%),
-    radial-gradient(circle at 50% 45%, rgba(127, 16, 35, 0.12), transparent 36%),
-    linear-gradient(to bottom, rgba(3, 3, 4, 0.08), rgba(3, 3, 4, 0.92));
+    radial-gradient(circle at 20% 8%, rgba(255, 47, 85, 0.13), transparent 28%),
+    radial-gradient(circle at 80% 0%, rgba(217, 31, 61, 0.08), transparent 32%),
+    radial-gradient(circle at 50% 50%, rgba(127, 16, 35, 0.1), transparent 42%),
+    linear-gradient(
+      to bottom,
+      rgba(3, 3, 4, 0.05),
+      rgba(3, 3, 4, 0.88)
+    );
 }
 
 /* Base */
@@ -204,7 +234,13 @@ h3 {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #d7d7dc 35%, var(--red-bright) 78%, var(--red-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #d7d7dc 35%,
+    var(--red-bright) 78%,
+    var(--red-dark) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -255,7 +291,7 @@ h3 {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
 
-/* Terminal / command panel - no Apple style */
+/* Terminal / command panel */
 
 .terminal-card {
   background:
@@ -301,12 +337,16 @@ h3 {
 
 .terminal-button:nth-child(3) {
   border-color: rgba(217, 31, 61, 0.45);
-  background: linear-gradient(180deg, rgba(217, 31, 61, 0.35), rgba(127, 16, 35, 0.18));
+  background: linear-gradient(
+    180deg,
+    rgba(217, 31, 61, 0.35),
+    rgba(127, 16, 35, 0.18)
+  );
 }
 
 .terminal-body {
   padding: 22px;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-family: Consolas, "Liberation Mono", monospace;
   font-size: 0.92rem;
   color: #c9c9cf;
   background:
@@ -496,7 +536,7 @@ h3 {
 /* Diagram */
 
 .diagram {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-family: Consolas, "Liberation Mono", monospace;
   color: #e5e5ea;
   background:
     linear-gradient(180deg, rgba(10, 10, 12, 0.9), rgba(4, 4, 5, 0.92));
