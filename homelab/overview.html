@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homelab Overview | InfraSynth Labs</title>
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <a class="logo" href="../../index.html">
+        <div class="logo-mark">I</div>
+        <span>InfraSynth Labs</span>
+      </a>
+
+      <nav>
+        <a href="../../index.html">Home</a>
+        <a href="overview.html">Overview</a>
+        <a href="pfsense-edge-firewall.html">pfSense</a>
+        <a href="wan-troubleshooting.html">WAN Log</a>
+        <a href="cisco-3750g-baseline.html">Cisco</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="doc-hero" id="top">
+        <div class="breadcrumbs">
+          <a href="../../index.html">Home</a>
+          <span>/</span>
+          <span>Homelab</span>
+          <span>/</span>
+          <span>Overview</span>
+        </div>
+
+        <div class="badge">
+          <span class="pulse"></span>
+          Homelab documentation
+        </div>
+
+        <h1>
+          <span class="gradient-text">Homelab</span><br />
+          Overview
+        </h1>
+
+        <p class="subtitle">
+          InfraSynth Labs is a practical infrastructure and security lab focused on firewalling,
+          networking, virtualization, documentation, and real systems administration workflows.
+        </p>
+
+        <div class="metadata-grid">
+          <div class="metadata-card">
+            <span>Firewall</span>
+            <strong>pfSense Deployed</strong>
+          </div>
+
+          <div class="metadata-card">
+            <span>WAN</span>
+            <strong>Static IP Online</strong>
+          </div>
+
+          <div class="metadata-card">
+            <span>Switching</span>
+            <strong>Pending Deployment</strong>
+          </div>
+
+          <div class="metadata-card">
+            <span>Virtualization</span>
+            <strong>Next Phase</strong>
+          </div>
+        </div>
+      </section>
+
+      <div class="doc-layout">
+        <aside class="doc-sidebar">
+          <h3>On this page</h3>
+          <a href="#objective">Objective</a>
+          <a href="#status">Current Status</a>
+          <a href="#topology">Current Topology</a>
+          <a href="#hardware">Hardware</a>
+          <a href="#network-plan">Network Plan</a>
+          <a href="#security">Security Principles</a>
+          <a href="#milestones">Next Milestones</a>
+          <a href="#related-docs">Related Docs</a>
+        </aside>
+
+        <section class="doc-content">
+          <article class="content-card" id="objective">
+            <h2>Objective</h2>
+            <p>
+              InfraSynth Labs is being built as a living technical portfolio. The purpose of the lab
+              is to design, deploy, troubleshoot, and document real infrastructure instead of only
+              describing theoretical knowledge.
+            </p>
+
+            <p>
+              The lab currently focuses on the foundation: replacing ISP gateway routing with pfSense,
+              building a stable internal network, preparing Cisco switching, and planning a future
+              virtualization environment.
+            </p>
+
+            <div class="callout success-callout">
+              <p>
+                <strong>Current phase:</strong> Build a stable firewall, DNS, DHCP, and documentation
+                foundation before adding VLANs, Proxmox, monitoring, and public services.
+              </p>
+            </div>
+          </article>
+
+          <article class="content-card" id="status">
+            <h2>Current Status</h2>
+            <p>
+              The lab is in its early infrastructure phase. pfSense is active as the primary firewall,
+              while Cisco switching and Proxmox are staged as upcoming milestones.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Area</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Edge Firewall</td>
+                    <td>Deployed</td>
+                    <td>pfSense is handling routing, firewalling, DHCP, DNS foundation, and NAT.</td>
+                  </tr>
+                  <tr>
+                    <td>Static Public IP</td>
+                    <td>Online</td>
+                    <td>Delivered by the ISP through DHCP reservation.</td>
+                  </tr>
+                  <tr>
+                    <td>Cloudflare Pages</td>
+                    <td>Online</td>
+                    <td>Used for the public InfraSynth Labs portfolio site.</td>
+                  </tr>
+                  <tr>
+                    <td>Cisco Core Switch</td>
+                    <td>Pending Deployment</td>
+                    <td>Cisco Catalyst 3750G-24TS-S is planned for core switching and future VLAN work.</td>
+                  </tr>
+                  <tr>
+                    <td>Proxmox Virtualization</td>
+                    <td>Next Phase</td>
+                    <td>Planned for Linux servers, Docker services, monitoring, and lab VMs.</td>
+                  </tr>
+                  <tr>
+                    <td>VLAN Segmentation</td>
+                    <td>Planned</td>
+                    <td>Will be added after the core switch and firewall foundation are stable.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="content-card" id="topology">
+            <h2>Current Topology</h2>
+            <p>
+              The current topology is intentionally simple. This keeps the network stable while the
+              firewall and documentation foundation are being built.
+            </p>
+
+            <pre class="diagram">Internet
+   │
+Fiber ONT
+   │
+pfSense Firewall
+   │
+Lab Network
+   │
+Clients / Server / Future Cisco Switching</pre>
+
+            <h3>Planned Topology</h3>
+            <p>
+              After the Cisco switch and Proxmox host are configured, the lab will move toward a more
+              structured infrastructure layout.
+            </p>
+
+            <pre class="diagram">Internet
+   │
+Fiber ONT
+   │
+pfSense Firewall
+   │
+Cisco Catalyst 3750G
+   │
+├── Admin Workstation
+├── Proxmox Host
+├── Lab Clients
+├── Future Wi-Fi AP
+└── Future Server / Services</pre>
+          </article>
+
+          <article class="content-card" id="hardware">
+            <h2>Hardware</h2>
+            <p>
+              The lab uses a mix of firewall, switching, desktop, and server hardware to create a
+              practical environment for network and systems administration.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Device</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>pfSense Firewall</td>
+                    <td>Edge firewall and router</td>
+                    <td>Deployed</td>
+                  </tr>
+                  <tr>
+                    <td>Cisco Catalyst 3750G-24TS-S</td>
+                    <td>Core lab switch</td>
+                    <td>Pending configuration</td>
+                  </tr>
+                  <tr>
+                    <td>Desktop / Server Hardware</td>
+                    <td>Future virtualization host</td>
+                    <td>Evaluating</td>
+                  </tr>
+                  <tr>
+                    <td>Additional Desktops</td>
+                    <td>Clients, testing, and lab roles</td>
+                    <td>Available</td>
+                  </tr>
+                  <tr>
+                    <td>Calix U6</td>
+                    <td>Former ISP router</td>
+                    <td>Replaced for routing</td>
+                  </tr>
+                  <tr>
+                    <td>Fiber ONT</td>
+                    <td>ISP handoff</td>
+                    <td>Active</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="content-card" id="network-plan">
+            <h2>Network Plan</h2>
+            <p>
+              The current network is built around pfSense as the central firewall and gateway.
+              Switching, VLANs, and segmentation will be added in controlled phases.
+            </p>
+
+            <h3>Current Foundation</h3>
+            <ul>
+              <li>pfSense is deployed as the primary edge firewall.</li>
+              <li>WAN uses DHCP because the static public IP is delivered through ISP DHCP reservation.</li>
+              <li>LAN DHCP is handled by pfSense.</li>
+              <li>DNS foundation is handled through pfSense DNS Resolver.</li>
+              <li>Cloudflare manages public DNS for the InfraSynth Labs domain.</li>
+            </ul>
+
+            <h3>Example Internal Naming Plan</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>FW01</td>
+                    <td>pfSense firewall</td>
+                  </tr>
+                  <tr>
+                    <td>CORE-SW01</td>
+                    <td>Cisco Catalyst 3750G core switch</td>
+                  </tr>
+                  <tr>
+                    <td>HV01</td>
+                    <td>Proxmox host</td>
+                  </tr>
+                  <tr>
+                    <td>SRV01</td>
+                    <td>General server VM</td>
+                  </tr>
+                  <tr>
+                    <td>MON01</td>
+                    <td>Monitoring and logging system</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Future VLAN Plan</h3>
+            <p>
+              VLANs are not active yet. They will be introduced after the Cisco switch and pfSense
+              foundation are stable.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>VLAN</th>
+                    <th>Purpose</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>VLAN 10</td>
+                    <td>Trusted LAN / Admin devices</td>
+                    <td>Planned</td>
+                  </tr>
+                  <tr>
+                    <td>VLAN 20</td>
+                    <td>Servers</td>
+                    <td>Planned</td>
+                  </tr>
+                  <tr>
+                    <td>VLAN 30</td>
+                    <td>DMZ / public services</td>
+                    <td>Planned</td>
+                  </tr>
+                  <tr>
+                    <td>VLAN 40</td>
+                    <td>IoT / test devices</td>
+                    <td>Planned</td>
+                  </tr>
+                  <tr>
+                    <td>VLAN 50</td>
+                    <td>Guest network</td>
+                    <td>Planned</td>
+                  </tr>
+                  <tr>
+                    <td>VLAN 99</td>
+                    <td>Management</td>
+                    <td>Planned</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="content-card" id="security">
+            <h2>Security Principles</h2>
+            <p>
+              InfraSynth Labs is being designed around controlled exposure, least privilege,
+              segmentation, and careful documentation.
+            </p>
+
+            <ul>
+              <li>Keep management interfaces internal only.</li>
+              <li>Do not expose pfSense, Proxmox, switch management, or server dashboards directly to the internet.</li>
+              <li>Use least-privilege firewall rules when segmentation is introduced.</li>
+              <li>Separate public services from personal devices.</li>
+              <li>Document major changes and troubleshooting steps.</li>
+              <li>Use sanitized examples in public documentation.</li>
+              <li>Avoid publishing real public IPs, MAC addresses, serial numbers, credentials, or sensitive screenshots.</li>
+            </ul>
+
+            <div class="callout danger-callout">
+              <p>
+                <strong>Public documentation rule:</strong> never publish live credentials, real WAN IPs,
+                MAC addresses, serial numbers, ISP account details, or screenshots that expose sensitive data.
+              </p>
+            </div>
+          </article>
+
+          <article class="content-card" id="milestones">
+            <h2>Next Milestones</h2>
+            <p>
+              The next phase is focused on moving from a basic working network into a documented
+              managed infrastructure environment.
+            </p>
+
+            <ol>
+              <li>Configure Cisco Catalyst 3750G baseline management.</li>
+              <li>Assign switch hostname and management IP.</li>
+              <li>Enable SSH and disable insecure remote access methods.</li>
+              <li>Install and configure Proxmox.</li>
+              <li>Create the first Ubuntu Server VM.</li>
+              <li>Add Docker services.</li>
+              <li>Design VLAN layout.</li>
+              <li>Build firewall rules for segmented networks.</li>
+              <li>Add monitoring and logging.</li>
+              <li>Document each phase as a portfolio project.</li>
+            </ol>
+          </article>
+
+          <article class="content-card" id="related-docs">
+            <h2>Related Documentation</h2>
+            <p>
+              These pages expand on specific parts of the lab buildout.
+            </p>
+
+            <div class="grid">
+              <article class="card">
+                <h3>pfSense Edge Firewall</h3>
+                <p>
+                  Documents the firewall deployment, WAN setup, DHCP, DNS, NAT, and current foundation.
+                </p>
+                <a class="project-link" href="pfsense-edge-firewall.html">Read pfSense documentation →</a>
+              </article>
+
+              <article class="card">
+                <h3>WAN Troubleshooting</h3>
+                <p>
+                  Documents the gateway issue, troubleshooting process, and lessons learned.
+                </p>
+                <a class="project-link" href="wan-troubleshooting.html">Read troubleshooting log →</a>
+              </article>
+
+              <article class="card">
+                <h3>Cisco 3750G Baseline</h3>
+                <p>
+                  Planned baseline configuration for the Cisco Catalyst 3750G core switch.
+                </p>
+                <a class="project-link" href="cisco-3750g-baseline.html">View Cisco baseline plan →</a>
+              </article>
+            </div>
+
+            <div class="doc-nav-buttons">
+              <a class="doc-nav-button" href="../../index.html">
+                <span>Back</span>
+                <strong>InfraSynth Labs Home</strong>
+              </a>
+
+              <a class="doc-nav-button" href="pfsense-edge-firewall.html">
+                <span>Next</span>
+                <strong>pfSense Edge Firewall</strong>
+              </a>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <span>© 2026 InfraSynth Labs</span>
+      <span>Infrastructure • Networking • Security</span>
+    </footer>
+  </div>
+</body>
+</html>
