@@ -17,6 +17,7 @@
       --accent-2: #7c3aed;
       --blue: #38bdf8;
       --green: #34d399;
+      --yellow: #fbbf24;
       --shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
     }
 
@@ -292,6 +293,14 @@
       color: #7c8798;
     }
 
+    .success {
+      color: var(--green);
+    }
+
+    .pending {
+      color: var(--yellow);
+    }
+
     .section {
       margin-top: 84px;
     }
@@ -355,6 +364,18 @@
       font-size: 0.82rem;
     }
 
+    .tag.success-tag {
+      color: #bbf7d0;
+      border-color: rgba(52, 211, 153, 0.28);
+      background: rgba(52, 211, 153, 0.08);
+    }
+
+    .tag.pending-tag {
+      color: #fde68a;
+      border-color: rgba(251, 191, 36, 0.28);
+      background: rgba(251, 191, 36, 0.08);
+    }
+
     .wide-card {
       grid-column: span 2;
     }
@@ -394,6 +415,37 @@
 
     .status-item span:last-child {
       font-weight: 700;
+      text-align: right;
+    }
+
+    .diagram {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      color: #cbd5e1;
+      background: rgba(7, 11, 18, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      border-left: 2px solid rgba(217, 48, 79, 0.6);
+      padding-left: 18px;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 6px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
     }
 
     footer {
@@ -461,8 +513,9 @@
 
       <nav>
         <a href="#projects">Projects</a>
-        <a href="#lab">Lab Stack</a>
-        <a href="#focus">Focus</a>
+        <a href="#current">Current Lab</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#journal">Lab Journal</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -482,12 +535,12 @@
 
           <p class="subtitle">
             A technical portfolio focused on infrastructure, networking, security,
-            self-hosting, segmentation, and practical systems administration.
+            self-hosting, firewalling, documentation, and practical systems administration.
           </p>
 
           <div class="buttons">
             <a class="button primary" href="#projects">View Projects</a>
-            <a class="button secondary" href="#lab">Explore Lab Stack</a>
+            <a class="button secondary" href="#current">Current Lab</a>
           </div>
         </div>
 
@@ -513,16 +566,101 @@
           </div>
 
           <div class="terminal-body">
-            <div class="line"><span class="prompt">infra@synth</span>:<span class="cmd">~/lab$</span> whoami</div>
+            <div class="line"><span class="prompt">infra@synth</span>:<span class="cmd">~/lab$</span> status</div>
             <div class="line">security-focused infrastructure builder</div>
-            <div class="line comment"># Current focus</div>
-            <div class="line">networking • firewalls • Linux • virtualization</div>
-            <div class="line comment"># Lab status</div>
-            <div class="line">proxmox: planned</div>
-            <div class="line">pfsense: planned</div>
-            <div class="line">docker: active learning</div>
-            <div class="line">security: in progress</div>
+            <div class="line comment"># Current lab status</div>
+            <div class="line"><span class="success">✓</span> pfSense: deployed</div>
+            <div class="line"><span class="success">✓</span> static public IP: online</div>
+            <div class="line"><span class="success">✓</span> dhcp/dns foundation: active</div>
+            <div class="line"><span class="success">✓</span> cloudflare pages: online</div>
+            <div class="line"><span class="pending">⏳</span> cisco catalyst 3750g: pending deployment</div>
+            <div class="line"><span class="pending">⏳</span> proxmox: pending deployment</div>
+            <div class="line"><span class="pending">⏳</span> vlans: planned</div>
           </div>
+        </div>
+      </section>
+
+      <section class="section" id="current">
+        <div class="section-heading">
+          <h2>Current Lab</h2>
+          <p>
+            The current lab foundation is focused on reliable edge routing,
+            DHCP, DNS, public domain hosting, and staged network expansion.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Firewall</h3>
+            <p>
+              pfSense is deployed as the primary firewall and routing platform for the lab network.
+            </p>
+            <div class="tag-row">
+              <span class="tag success-tag">Deployed</span>
+              <span class="tag">pfSense</span>
+              <span class="tag">Firewall</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Internet</h3>
+            <p>
+              Fiber connection with a DHCP-delivered static public IP address assigned to the firewall.
+            </p>
+            <div class="tag-row">
+              <span class="tag success-tag">Online</span>
+              <span class="tag">Static Public IP</span>
+              <span class="tag">Fiber</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Core Switching</h3>
+            <p>
+              Cisco Catalyst 3750G-24TS-S acquired for core lab switching and future VLAN work.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">Pending Deployment</span>
+              <span class="tag">Cisco</span>
+              <span class="tag">3750G</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Hosting</h3>
+            <p>
+              Public portfolio is hosted through Cloudflare Pages with DNS managed through Cloudflare.
+            </p>
+            <div class="tag-row">
+              <span class="tag success-tag">Online</span>
+              <span class="tag">Cloudflare</span>
+              <span class="tag">DNS</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Virtualization</h3>
+            <p>
+              Proxmox deployment is planned as the next major infrastructure milestone.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">Next Phase</span>
+              <span class="tag">Proxmox</span>
+              <span class="tag">Linux</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Documentation</h3>
+            <p>
+              InfraSynth Labs is being documented as a living infrastructure portfolio.
+            </p>
+            <div class="tag-row">
+              <span class="tag success-tag">Active</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Portfolio</span>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -530,59 +668,112 @@
         <div class="section-heading">
           <h2>Projects</h2>
           <p>
-            Practical lab projects designed around real infrastructure concepts:
-            segmentation, service isolation, firewalling, monitoring, and documentation.
+            Practical infrastructure projects based on real deployment work,
+            troubleshooting, documentation, and staged network design.
           </p>
         </div>
 
         <div class="grid">
           <article class="card wide-card">
+            <h3>pfSense Edge Firewall Deployment</h3>
+            <p>
+              Deployed pfSense as the primary firewall for the lab, replacing ISP gateway routing
+              and establishing the foundation for DHCP, DNS, NAT, firewall rules, and future segmentation.
+            </p>
+            <div class="tag-row">
+              <span class="tag success-tag">Complete</span>
+              <span class="tag">pfSense</span>
+              <span class="tag">DHCP</span>
+              <span class="tag">DNS</span>
+              <span class="tag">Static Public IP</span>
+            </div>
+            <a class="project-link" href="#">Documentation in progress →</a>
+          </article>
+
+          <article class="card">
+            <h3>Cisco Core Switching</h3>
+            <p>
+              Preparing a Cisco Catalyst 3750G-24TS-S for core lab switching, management access,
+              future VLAN trunking, and enterprise networking practice.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">Pending Deployment</span>
+              <span class="tag">Cisco</span>
+              <span class="tag">3750G</span>
+            </div>
+          </article>
+
+          <article class="card">
             <h3>Network Segmentation Design</h3>
             <p>
-              A documented VLAN and firewall design separating trusted devices,
-              servers, guest systems, IoT devices, public services, and management interfaces.
+              Designing future VLAN separation for management, servers, clients, IoT, guest access,
+              and public-facing services.
             </p>
             <div class="tag-row">
+              <span class="tag pending-tag">Planned</span>
               <span class="tag">VLANs</span>
               <span class="tag">Firewall Rules</span>
-              <span class="tag">DMZ</span>
               <span class="tag">Least Privilege</span>
             </div>
-            <a class="project-link" href="#">Coming soon →</a>
           </article>
 
           <article class="card">
-            <h3>pfSense Firewall Lab</h3>
+            <h3>Proxmox Virtualization</h3>
             <p>
-              Firewall, routing, DHCP, DNS, NAT, VPN, and segmented lab traffic.
+              Preparing a virtualization host for Linux servers, Docker services, monitoring,
+              lab clients, and future security tooling.
             </p>
             <div class="tag-row">
-              <span class="tag">pfSense</span>
-              <span class="tag">Routing</span>
+              <span class="tag pending-tag">Next Phase</span>
+              <span class="tag">Proxmox</span>
+              <span class="tag">Virtualization</span>
             </div>
           </article>
+        </div>
+      </section>
 
-          <article class="card">
-            <h3>Docker Services</h3>
-            <p>
-              Containerized services for internal tools, game servers, dashboards,
-              and future monitoring systems.
-            </p>
-            <div class="tag-row">
-              <span class="tag">Docker</span>
-              <span class="tag">Linux</span>
-            </div>
+      <section class="section" id="architecture">
+        <div class="section-heading">
+          <h2>Architecture</h2>
+          <p>
+            Current topology is intentionally simple while the lab foundation is being stabilized.
+            Segmentation and advanced switching will be added in later phases.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <h3>Current Topology</h3>
+            <pre class="diagram">Internet
+   │
+Fiber ONT
+   │
+pfSense Firewall
+   │
+Lab Network
+   │
+Clients / Server / Future Cisco Switching</pre>
           </article>
 
           <article class="card">
-            <h3>Public Service Isolation</h3>
-            <p>
-              Designing safer hosting patterns for public services without exposing
-              private devices or management interfaces.
-            </p>
-            <div class="tag-row">
-              <span class="tag">DMZ</span>
-              <span class="tag">DNS</span>
+            <h3>Next Network Milestone</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>Core switch</span>
+                <span>Pending</span>
+              </div>
+              <div class="status-item">
+                <span>Management IP</span>
+                <span>Pending</span>
+              </div>
+              <div class="status-item">
+                <span>SSH access</span>
+                <span>Pending</span>
+              </div>
+              <div class="status-item">
+                <span>VLANs</span>
+                <span>Planned</span>
+              </div>
             </div>
           </article>
         </div>
@@ -600,9 +791,11 @@
           <article class="card">
             <h3>Infrastructure</h3>
             <p>
-              Proxmox, Ubuntu Server, Linux administration, backups, and internal services.
+              pfSense, future Proxmox virtualization, Ubuntu Server, Linux administration,
+              backups, and internal services.
             </p>
             <div class="tag-row">
+              <span class="tag">pfSense</span>
               <span class="tag">Proxmox</span>
               <span class="tag">Ubuntu</span>
               <span class="tag">Linux</span>
@@ -612,11 +805,12 @@
           <article class="card">
             <h3>Networking</h3>
             <p>
-              pfSense, Cisco switching, VLANs, DNS, DHCP, routing, and firewall policies.
+              Cisco switching, DHCP, DNS, routing, firewall policies, and future VLAN segmentation.
             </p>
             <div class="tag-row">
-              <span class="tag">pfSense</span>
               <span class="tag">Cisco</span>
+              <span class="tag">DHCP</span>
+              <span class="tag">DNS</span>
               <span class="tag">VLANs</span>
             </div>
           </article>
@@ -624,36 +818,64 @@
           <article class="card">
             <h3>Security</h3>
             <p>
-              Least privilege, segmentation, public service isolation, logging, and monitoring.
+              Least privilege, public service isolation, firewall rule design, logging,
+              and future monitoring.
             </p>
             <div class="tag-row">
+              <span class="tag">Firewalling</span>
               <span class="tag">Segmentation</span>
-              <span class="tag">Hardening</span>
               <span class="tag">Monitoring</span>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section" id="focus">
+      <section class="section" id="journal">
         <div class="section-heading">
-          <h2>Current Focus</h2>
+          <h2>Lab Journal</h2>
           <p>
-            Building a professional infrastructure portfolio while developing deeper
-            networking and security skills.
+            A running timeline of deployment progress, problems encountered, and infrastructure milestones.
           </p>
         </div>
 
         <div class="grid">
           <article class="card wide-card">
-            <h3>Professional Direction</h3>
-            <p>
-              InfraSynth Labs is focused on network and security infrastructure:
-              systems that are practical, documented, segmented, and built with real-world operations in mind.
-            </p>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h3>July 2026 — Edge Firewall Deployment</h3>
+                <p>
+                  Deployed pfSense as the primary lab firewall and restored WAN connectivity
+                  using a DHCP-delivered static public IP.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h3>July 2026 — WAN Troubleshooting</h3>
+                <p>
+                  Troubleshot gateway connectivity, DHCP static assignment behavior,
+                  WAN interface selection, and ISP handoff behavior during firewall replacement.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h3>July 2026 — Public Portfolio</h3>
+                <p>
+                  Published InfraSynth Labs through Cloudflare Pages and began documenting the lab as a professional infrastructure portfolio.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h3>Next — Cisco Switching</h3>
+                <p>
+                  Configure the Cisco Catalyst 3750G-24TS-S with hostname, management IP,
+                  SSH access, secure local login, and saved baseline configuration.
+                </p>
+              </div>
+            </div>
           </article>
 
           <article class="card">
+            <h3>Current Focus</h3>
             <div class="status-list">
               <div class="status-item">
                 <span>Security+</span>
@@ -698,7 +920,7 @@
           <article class="card">
             <h3>Portfolio</h3>
             <p>
-              This site will become the central public hub for InfraSynth Labs.
+              This site is the central public hub for InfraSynth Labs.
             </p>
             <a class="project-link" href="https://infrasynthlabs.com">
               infrasynthlabs.com →
@@ -708,7 +930,7 @@
           <article class="card">
             <h3>Status</h3>
             <p>
-              Currently building the foundation: site, DNS, lab documentation, and project structure.
+              Currently building the foundation: firewall, DNS, documentation, and staged network infrastructure.
             </p>
           </article>
         </div>
