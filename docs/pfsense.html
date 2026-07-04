@@ -1,1 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pfSense Edge Firewall | InfraSynth Labs</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
 
+<body>
+  <div class="page">
+    <header>
+      <a class="logo" href="/">
+        <div class="logo-mark">I</div>
+        <span>InfraSynth Labs</span>
+      </a>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/docs/">Docs</a>
+        <a href="/docs/homelab.html">Homelab</a>
+        <a href="/docs/wan-troubleshooting.html">WAN Log</a>
+        <a href="/docs/cisco-3750g.html">Cisco</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="docs-hero">
+        <div class="badge">
+          <span class="pulse"></span>
+          Firewall deployment documentation
+        </div>
+
+        <h1>
+          <span class="gradient-text">pfSense</span><br />
+          Edge Firewall
+        </h1>
+
+        <p class="subtitle">
+          Deployment notes for replacing ISP gateway routing with pfSense and building the
+          network foundation for InfraSynth Labs.
+        </p>
+
+        <div class="buttons">
+          <a class="button primary" href="/docs/wan-troubleshooting.html">WAN Troubleshooting</a>
+          <a class="button secondary" href="/docs/homelab.html">Homelab Overview</a>
+        </div>
+      </section>
+
+      <section class="section" id="objective">
+        <div class="section-heading">
+          <h2>Objective</h2>
+          <p>
+            Deploy pfSense as the primary edge firewall and router for the lab network.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <h3>Deployment Goal</h3>
+            <p>
+              The goal of this deployment was to move routing and firewall control away from the
+              ISP gateway and onto pfSense. This creates a stronger foundation for future VLANs,
+              firewall rules, VPNs, monitoring, public service isolation, and lab documentation.
+            </p>
+
+            <div class="tag-row">
+              <span class="tag success-tag">Deployed</span>
+              <span class="tag">Firewall</span>
+              <span class="tag">Routing</span>
+              <span class="tag">DHCP</span>
+              <span class="tag">DNS</span>
+              <span class="tag">NAT</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Current State</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>pfSense</span>
+                <span>Online</span>
+              </div>
+              <div class="status-item">
+                <span>WAN</span>
+                <span>Active</span>
+              </div>
+              <div class="status-item">
+                <span>LAN DHCP</span>
+                <span>Active</span>
+              </div>
+              <div class="status-item">
+                <span>DNS Resolver</span>
+                <span>Active</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="topology">
+        <div class="section-heading">
+          <h2>Topology</h2>
+          <p>
+            The initial firewall deployment keeps the network simple while the foundation is verified.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card full-card">
+            <h3>Current Network Path</h3>
+            <pre class="diagram">Internet
+   │
+Fiber ONT
+   │
+pfSense Firewall
+   │
+Lab Network
+   │
+Clients / Server Hardware</pre>
+          </article>
+
+          <article class="card wide-card">
+            <h3>Planned Network Path</h3>
+            <pre class="diagram">Internet
+   │
+Fiber ONT
+   │
+pfSense Firewall
+   │
+Cisco Catalyst 3750G
+   │
+├── Admin Workstation
+├── Proxmox Host
+├── Lab Clients
+├── Future Wi-Fi AP
+└── Future Server / Services</pre>
+          </article>
+
+          <article class="card">
+            <h3>Design Choice</h3>
+            <p>
+              pfSense remains the primary router and firewall. The Cisco switch will be introduced
+              later as the managed core switch, not as the internet edge device.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="configuration">
+        <div class="section-heading">
+          <h2>Configuration Summary</h2>
+          <p>
+            Current pfSense configuration is focused on stable WAN access and a working LAN foundation.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Configuration</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>WAN</td>
+                <td>DHCP-delivered static public IP from ISP</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>LAN</td>
+                <td>Private internal lab network</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>DHCP Server</td>
+                <td>Handled by pfSense on the LAN side</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>DNS</td>
+                <td>pfSense DNS Resolver used as internal DNS foundation</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>NAT</td>
+                <td>Automatic outbound NAT during foundation phase</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>Firewall Rules</td>
+                <td>Basic LAN outbound access during initial setup</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>VLANs</td>
+                <td>Not yet configured</td>
+                <td>Planned</td>
+              </tr>
+              <tr>
+                <td>Monitoring</td>
+                <td>Not yet configured</td>
+                <td>Planned</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="wan">
+        <div class="section-heading">
+          <h2>WAN Configuration</h2>
+          <p>
+            The ISP provides a static public IP through DHCP reservation, not manual static entry.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <h3>Important WAN Detail</h3>
+            <p>
+              The WAN interface should use DHCP because the ISP assigns the static public IP through
+              a DHCP reservation. The public address is static from the ISP side, but pfSense still
+              receives it through DHCP.
+            </p>
+
+            <pre class="diagram">WAN IPv4 Configuration Type: DHCP
+Static IP Delivery Method: ISP DHCP Reservation
+Manual Static WAN Entry: Not Used</pre>
+
+            <div class="tag-row">
+              <span class="tag success-tag">Correct Method</span>
+              <span class="tag">DHCP WAN</span>
+              <span class="tag">Static Reservation</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Do Not Publish</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>Public IP</span>
+                <span>Redacted</span>
+              </div>
+              <div class="status-item">
+                <span>Gateway</span>
+                <span>Redacted</span>
+              </div>
+              <div class="status-item">
+                <span>MAC Address</span>
+                <span>Redacted</span>
+              </div>
+              <div class="status-item">
+                <span>ISP Details</span>
+                <span>Redacted</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="lan">
+        <div class="section-heading">
+          <h2>LAN Foundation</h2>
+          <p>
+            pfSense currently provides the internal network foundation for lab devices.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Gateway</h3>
+            <p>
+              pfSense acts as the default gateway for the internal lab network.
+              Internal clients use the firewall for outbound access.
+            </p>
+            <div class="tag-row">
+              <span class="tag success-tag">Active</span>
+              <span class="tag">Gateway</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>DHCP</h3>
+            <p>
+              pfSense provides DHCP on the LAN side. This allows clients to receive
+              internal addresses, gateway information, and DNS automatically.
+            </p>
+            <div class="tag-row">
+              <span class="tag success-tag">Active</span>
+              <span class="tag">DHCP</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>DNS</h3>
+            <p>
+              pfSense DNS Resolver is used as the DNS foundation. This will later support
+              internal hostnames and lab naming.
+            </p>
+            <div class="tag-row">
+              <span class="tag success-tag">Active</span>
+              <span class="tag">DNS Resolver</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="firewall-rules">
+        <div class="section-heading">
+          <h2>Firewall Rules</h2>
+          <p>
+            The current firewall policy is simple while the base network is being stabilized.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <h3>Foundation Phase Policy</h3>
+            <p>
+              During the foundation phase, the LAN is allowed outbound internet access through pfSense.
+              This is useful while hardware, DNS, DHCP, and switching are still being introduced.
+            </p>
+
+            <p>
+              Later phases will move toward least-privilege firewall rules once VLANs and public
+              service isolation are added.
+            </p>
+
+            <div class="tag-row">
+              <span class="tag">LAN Outbound</span>
+              <span class="tag">Automatic NAT</span>
+              <span class="tag">Future Segmentation</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Future Rule Areas</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>Management Access</span>
+                <span>Planned</span>
+              </div>
+              <div class="status-item">
+                <span>Server VLAN</span>
+                <span>Planned</span>
+              </div>
+              <div class="status-item">
+                <span>Guest Network</span>
+                <span>Planned</span>
+              </div>
+              <div class="status-item">
+                <span>DMZ Services</span>
+                <span>Planned</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="security">
+        <div class="section-heading">
+          <h2>Security Notes</h2>
+          <p>
+            The firewall is the most sensitive part of the lab and should remain protected.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <h3>Management Safety</h3>
+            <p>
+              pfSense management should remain internal only. The web interface, SSH, and other
+              administrative services should not be exposed directly to the public internet.
+            </p>
+
+            <div class="tag-row">
+              <span class="tag">No Public Admin</span>
+              <span class="tag">Internal Management</span>
+              <span class="tag">Least Privilege Later</span>
+              <span class="tag">Sanitized Documentation</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Public Docs Rules</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>WAN IP</span>
+                <span>Redact</span>
+              </div>
+              <div class="status-item">
+                <span>Firewall Screenshots</span>
+                <span>Sanitize</span>
+              </div>
+              <div class="status-item">
+                <span>Serials / MACs</span>
+                <span>Remove</span>
+              </div>
+              <div class="status-item">
+                <span>Credentials</span>
+                <span>Never</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="issues">
+        <div class="section-heading">
+          <h2>Issues Encountered</h2>
+          <p>
+            Initial deployment included WAN and gateway behavior that required troubleshooting.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <h3>Gateway / WAN Behavior</h3>
+            <p>
+              During initial setup, pfSense received the ISP-assigned public address but gateway
+              status and external connectivity did not behave correctly at first.
+            </p>
+
+            <p>
+              The key discovery was that the static public IP is delivered through DHCP reservation.
+              Once the WAN configuration matched the ISP delivery method and the firewall was rebooted,
+              connectivity returned.
+            </p>
+
+            <div class="tag-row">
+              <span class="tag success-tag">Resolved</span>
+              <span class="tag">WAN</span>
+              <span class="tag">Gateway</span>
+              <span class="tag">DHCP Static</span>
+            </div>
+
+            <a class="project-link" href="/docs/wan-troubleshooting.html">Read WAN troubleshooting log →</a>
+          </article>
+
+          <article class="card">
+            <h3>Lessons</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>Static IP</span>
+                <span>Can use DHCP</span>
+              </div>
+              <div class="status-item">
+                <span>Gateway Status</span>
+                <span>Separate check</span>
+              </div>
+              <div class="status-item">
+                <span>Interface Mapping</span>
+                <span>Verify</span>
+              </div>
+              <div class="status-item">
+                <span>Reboot State</span>
+                <span>Can matter</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="future">
+        <div class="section-heading">
+          <h2>Future Work</h2>
+          <p>
+            pfSense will become the control point for future segmentation and public service isolation.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>VLANs</h3>
+            <p>
+              Add VLAN interfaces on pfSense once the Cisco switch baseline is configured and tested.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">Planned</span>
+              <span class="tag">Segmentation</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Firewall Policy</h3>
+            <p>
+              Replace broad foundation-phase access with clearer least-privilege rules between networks.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">Planned</span>
+              <span class="tag">Rules</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Monitoring</h3>
+            <p>
+              Add visibility for WAN uptime, gateway status, logs, blocked traffic, and service health.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">Planned</span>
+              <span class="tag">Logging</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>VPN</h3>
+            <p>
+              Future remote access should use a controlled VPN instead of exposing management panels.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">Planned</span>
+              <span class="tag">Remote Access</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Public Services</h3>
+            <p>
+              Public services should be isolated away from personal devices and management interfaces.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">Planned</span>
+              <span class="tag">DMZ</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Backups</h3>
+            <p>
+              Export and store sanitized configuration backups after stable milestone changes.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">Planned</span>
+              <span class="tag">Config Backup</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="related">
+        <div class="section-heading">
+          <h2>Related Pages</h2>
+          <p>
+            Continue through the firewall and networking documentation.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Homelab Overview</h3>
+            <p>
+              Return to the main homelab overview for status, hardware, topology, and roadmap.
+            </p>
+            <a class="project-link" href="/docs/homelab.html">Open homelab overview →</a>
+          </article>
+
+          <article class="card">
+            <h3>WAN Troubleshooting</h3>
+            <p>
+              Review the WAN issue, DHCP static behavior, gateway testing, and final resolution.
+            </p>
+            <a class="project-link" href="/docs/wan-troubleshooting.html">Open WAN log →</a>
+          </article>
+
+          <article class="card">
+            <h3>Cisco Baseline</h3>
+            <p>
+              View the planned baseline for the Cisco Catalyst 3750G core switch.
+            </p>
+            <a class="project-link" href="/docs/cisco-3750g.html">Open Cisco docs →</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 InfraSynth Labs</span>
+      <span>pfSense • Firewalling • Routing • Network Foundation</span>
+    </footer>
+  </div>
+</body>
+</html>
