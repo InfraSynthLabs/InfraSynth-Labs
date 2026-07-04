@@ -17,9 +17,9 @@
 
       <nav>
         <a href="#projects">Projects</a>
+        <a href="#featured">Featured</a>
         <a href="#lab">Current Lab</a>
-        <a href="#architecture">Architecture</a>
-        <a href="#journal">Lab Journal</a>
+        <a href="/projects/">Project Hub</a>
         <a href="/docs/">Docs</a>
       </nav>
     </header>
@@ -29,7 +29,7 @@
         <div>
           <div class="badge">
             <span class="pulse"></span>
-            Infrastructure lab online
+            Central project hub online
           </div>
 
           <h1>
@@ -38,8 +38,8 @@
           </h1>
 
           <p class="subtitle">
-            A red-team inspired infrastructure lab focused on networking, firewalls,
-            virtualization, systems administration, documentation, and practical security operations.
+            A personal project hub documenting infrastructure, networking, fabrication,
+            vehicle restoration, creative systems, and hands-on technical builds.
           </p>
 
           <div class="buttons">
@@ -50,7 +50,7 @@
 
         <div class="terminal-card">
           <div class="terminal-top">
-            <div class="terminal-title">INFRA STATUS PANEL</div>
+            <div class="terminal-title">PROJECT STATUS PANEL</div>
             <div class="terminal-controls">
               <span class="terminal-button"></span>
               <span class="terminal-button"></span>
@@ -59,99 +59,64 @@
           </div>
 
           <div class="terminal-body">
-            <div class="line"><span class="prompt">infra@synth</span>:<span class="cmd">~/lab$</span> status</div>
-            <div class="line">security-focused infrastructure builder</div>
-            <div class="line comment"># Current lab state</div>
-            <div class="line"><span class="success">[ONLINE]</span> pfSense firewall deployed</div>
-            <div class="line"><span class="success">[ONLINE]</span> static public IP active</div>
-            <div class="line"><span class="success">[ONLINE]</span> DHCP / DNS foundation active</div>
-            <div class="line"><span class="success">[ONLINE]</span> Cloudflare Pages deployed</div>
-            <div class="line"><span class="pending">[PENDING]</span> Cisco Catalyst 3750G baseline</div>
-            <div class="line"><span class="pending">[PLANNED]</span> Proxmox virtualization</div>
-            <div class="line"><span class="pending">[PLANNED]</span> VLAN segmentation</div>
+            <div class="line"><span class="prompt">infra@synth</span>:<span class="cmd">~/projects$</span> status</div>
+            <div class="line">builder • technician • creator • documenter</div>
+            <div class="line comment"># Active project areas</div>
+            <div class="line"><span class="success">[ACTIVE]</span> infrastructure lab</div>
+            <div class="line"><span class="success">[ACTIVE]</span> public documentation</div>
+            <div class="line"><span class="pending">[BUILD]</span> 1989 Toyota Supra restoration</div>
+            <div class="line"><span class="pending">[BUILD]</span> Novabeast fursuit fabrication</div>
+            <div class="line"><span class="pending">[WORLD]</span> Crimson Complex writing project</div>
+            <div class="line"><span class="pending">[MEDIA]</span> streaming and content systems</div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="lab">
+      <section class="section" id="featured">
         <div class="section-heading">
-          <h2>Current Lab</h2>
+          <h2>Featured Focus</h2>
           <p>
-            The current foundation is focused on stable edge routing, internal DHCP/DNS,
-            public site deployment, and preparing for managed switching and virtualization.
+            InfraSynth Labs leads with infrastructure and technical systems, while also documenting
+            physical builds, restoration work, and creative projects.
           </p>
         </div>
 
         <div class="grid">
-          <article class="card">
-            <h3>Edge Firewall</h3>
+          <article class="card wide-card">
+            <h3>Infrastructure Lab</h3>
             <p>
-              pfSense is deployed as the primary firewall and routing platform for the lab network.
+              A practical homelab focused on firewalling, networking, DNS, DHCP, Cisco switching,
+              virtualization, documentation, and future security monitoring.
             </p>
             <div class="tag-row">
-              <span class="tag success-tag">Deployed</span>
+              <span class="tag success-tag">Primary Focus</span>
               <span class="tag">pfSense</span>
-              <span class="tag">Firewall</span>
+              <span class="tag">Networking</span>
+              <span class="tag">Security</span>
+              <span class="tag">Documentation</span>
             </div>
+            <a class="project-link" href="/projects/infrastructure.html">View infrastructure project →</a>
           </article>
 
           <article class="card">
-            <h3>WAN / Internet</h3>
-            <p>
-              Fiber internet is active with a DHCP-delivered static public IP assigned to the firewall.
-            </p>
-            <div class="tag-row">
-              <span class="tag success-tag">Online</span>
-              <span class="tag">Fiber</span>
-              <span class="tag">Static IP</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Public Site</h3>
-            <p>
-              InfraSynth Labs is hosted through Cloudflare Pages with DNS managed through Cloudflare.
-            </p>
-            <div class="tag-row">
-              <span class="tag success-tag">Online</span>
-              <span class="tag">Cloudflare</span>
-              <span class="tag">GitHub</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Core Switching</h3>
-            <p>
-              Cisco Catalyst 3750G-24TS-S is acquired and pending baseline configuration.
-            </p>
-            <div class="tag-row">
-              <span class="tag pending-tag">Pending</span>
-              <span class="tag">Cisco</span>
-              <span class="tag">3750G</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Virtualization</h3>
-            <p>
-              Proxmox is planned as the next major platform for Linux servers, Docker services, and lab VMs.
-            </p>
-            <div class="tag-row">
-              <span class="tag pending-tag">Planned</span>
-              <span class="tag">Proxmox</span>
-              <span class="tag">Linux</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Documentation</h3>
-            <p>
-              The lab is being documented as a public portfolio showing design, deployment, and troubleshooting work.
-            </p>
-            <div class="tag-row">
-              <span class="tag success-tag">Active</span>
-              <span class="tag">Docs</span>
-              <span class="tag">Portfolio</span>
+            <h3>Current Status</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>pfSense</span>
+                <span>Deployed</span>
+              </div>
+              <div class="status-item">
+                <span>Cloudflare Pages</span>
+                <span>Online</span>
+              </div>
+              <div class="status-item">
+                <span>Cisco 3750G</span>
+                <span>Pending</span>
+              </div>
+              <div class="status-item">
+                <span>Proxmox</span>
+                <span>Planned</span>
+              </div>
             </div>
           </article>
         </div>
@@ -159,77 +124,110 @@
 
       <section class="section" id="projects">
         <div class="section-heading">
-          <h2>Projects</h2>
+          <h2>Project Areas</h2>
           <p>
-            Practical infrastructure work documented as real deployment milestones,
-            not just theory or placeholders.
+            Each project area is documented as a build log, technical record, and portfolio piece.
           </p>
         </div>
 
         <div class="grid">
-          <article class="card wide-card">
-            <h3>pfSense Edge Firewall Deployment</h3>
+          <article class="card">
+            <h3>Infrastructure & Homelab</h3>
             <p>
-              Deployed pfSense as the primary firewall, replacing ISP gateway routing and creating
-              the foundation for DHCP, DNS, NAT, firewall policy, and future segmentation.
+              Firewall deployment, network design, Cisco switching, Proxmox planning,
+              DNS, DHCP, troubleshooting, and future segmentation.
             </p>
             <div class="tag-row">
-              <span class="tag success-tag">Complete</span>
-              <span class="tag">Firewall</span>
-              <span class="tag">Routing</span>
-              <span class="tag">DHCP</span>
-              <span class="tag">DNS</span>
+              <span class="tag success-tag">Active</span>
+              <span class="tag">IT</span>
+              <span class="tag">Networking</span>
+              <span class="tag">Security</span>
             </div>
-            <a class="project-link" href="/docs/">View documentation →</a>
+            <a class="project-link" href="/projects/infrastructure.html">Open project →</a>
           </article>
 
           <article class="card">
-            <h3>WAN Troubleshooting</h3>
+            <h3>1989 Supra Restoration</h3>
             <p>
-              Documenting the ISP handoff, DHCP-delivered static IP behavior, gateway issues,
-              and the troubleshooting process used to restore connectivity.
+              Restoration and build documentation for a 1989 Toyota Supra MK3, including
+              disassembly, engine bay work, parts planning, and long-term build goals.
             </p>
             <div class="tag-row">
-              <span class="tag success-tag">Documenting</span>
-              <span class="tag">WAN</span>
-              <span class="tag">Troubleshooting</span>
+              <span class="tag pending-tag">In Progress</span>
+              <span class="tag">Restoration</span>
+              <span class="tag">Mechanical</span>
+              <span class="tag">Build Log</span>
             </div>
+            <a class="project-link" href="/projects/supra.html">Open project →</a>
           </article>
 
           <article class="card">
-            <h3>Cisco Core Switching</h3>
+            <h3>Fursuit Fabrication</h3>
             <p>
-              Preparing the Cisco Catalyst 3750G for management access, SSH, baseline configuration,
-              and future VLAN trunking.
+              Novabeast fursuit build documentation covering foam work, shaping,
+              ventilation, electronics planning, fur work, and design revisions.
             </p>
             <div class="tag-row">
-              <span class="tag pending-tag">Pending</span>
-              <span class="tag">Cisco</span>
-              <span class="tag">Switching</span>
+              <span class="tag pending-tag">In Progress</span>
+              <span class="tag">Fabrication</span>
+              <span class="tag">Foam</span>
+              <span class="tag">Electronics</span>
             </div>
+            <a class="project-link" href="/projects/fursuit.html">Open project →</a>
           </article>
 
           <article class="card">
-            <h3>Proxmox Virtualization</h3>
+            <h3>Writing & Worldbuilding</h3>
             <p>
-              Planned virtualization host for Ubuntu Server, Docker services, monitoring,
-              internal tools, and future security projects.
+              Creative development for Crimson Complex, including characters, timelines,
+              factions, setting design, and long-form story structure.
             </p>
             <div class="tag-row">
-              <span class="tag pending-tag">Next Phase</span>
-              <span class="tag">Proxmox</span>
-              <span class="tag">Virtualization</span>
+              <span class="tag info-tag">Creative</span>
+              <span class="tag">Worldbuilding</span>
+              <span class="tag">Writing</span>
+              <span class="tag">Lore</span>
             </div>
+            <a class="project-link" href="/projects/writing.html">Open project →</a>
+          </article>
+
+          <article class="card">
+            <h3>Content Creation Systems</h3>
+            <p>
+              Streaming setup, branding, schedules, technical workflows, community building,
+              and content experiments across live and short-form platforms.
+            </p>
+            <div class="tag-row">
+              <span class="tag info-tag">Media</span>
+              <span class="tag">Streaming</span>
+              <span class="tag">Workflow</span>
+              <span class="tag">Branding</span>
+            </div>
+            <a class="project-link" href="/projects/content.html">Open project →</a>
+          </article>
+
+          <article class="card">
+            <h3>Documentation Archive</h3>
+            <p>
+              Structured notes, technical documentation, troubleshooting records,
+              project roadmaps, and sanitized public writeups.
+            </p>
+            <div class="tag-row">
+              <span class="tag success-tag">Active</span>
+              <span class="tag">Docs</span>
+              <span class="tag">Notes</span>
+              <span class="tag">Portfolio</span>
+            </div>
+            <a class="project-link" href="/docs/">Open docs →</a>
           </article>
         </div>
       </section>
 
-      <section class="section" id="architecture">
+      <section class="section" id="lab">
         <div class="section-heading">
-          <h2>Architecture</h2>
+          <h2>Current Infrastructure Lab</h2>
           <p>
-            The network is intentionally simple while the firewall foundation is stabilized.
-            More structure will be added in controlled phases.
+            The infrastructure side of InfraSynth Labs is the main professional portfolio focus.
           </p>
         </div>
 
@@ -248,29 +246,29 @@ Clients / Server Hardware</pre>
           </article>
 
           <article class="card">
-            <h3>Next Network Milestone</h3>
+            <h3>Foundation</h3>
             <div class="status-list">
               <div class="status-item">
-                <span>Core Switch</span>
-                <span>Pending</span>
+                <span>Firewall</span>
+                <span>pfSense</span>
               </div>
               <div class="status-item">
-                <span>Management IP</span>
-                <span>Pending</span>
+                <span>WAN</span>
+                <span>Static IP</span>
               </div>
               <div class="status-item">
-                <span>SSH Access</span>
-                <span>Pending</span>
+                <span>DNS</span>
+                <span>Active</span>
               </div>
               <div class="status-item">
-                <span>VLAN Design</span>
-                <span>Planned</span>
+                <span>DHCP</span>
+                <span>Active</span>
               </div>
             </div>
           </article>
 
           <article class="card full-card">
-            <h3>Planned Topology</h3>
+            <h3>Planned Infrastructure Topology</h3>
             <pre class="diagram">Internet
    │
 Fiber ONT
@@ -290,9 +288,9 @@ Cisco Catalyst 3750G
 
       <section class="section" id="journal">
         <div class="section-heading">
-          <h2>Lab Journal</h2>
+          <h2>Build Journal</h2>
           <p>
-            A running timeline of build progress, troubleshooting, and infrastructure milestones.
+            Current milestones across technical, physical, and creative projects.
           </p>
         </div>
 
@@ -300,57 +298,50 @@ Cisco Catalyst 3750G
           <article class="card wide-card">
             <div class="timeline">
               <div class="timeline-item">
-                <h3>July 2026 — Public Site Rebuild</h3>
+                <h3>InfraSynth Labs — Site Rebuild</h3>
                 <p>
-                  Rebuilt the InfraSynth Labs website from scratch with a dedicated red/black theme,
-                  shared CSS, and a cleaner GitHub structure.
+                  Rebuilding the site as a central hub for infrastructure, restoration,
+                  fabrication, writing, and content systems.
                 </p>
               </div>
 
               <div class="timeline-item">
-                <h3>July 2026 — pfSense Deployment</h3>
+                <h3>Infrastructure — pfSense Deployment</h3>
                 <p>
-                  Deployed pfSense as the primary edge firewall and established the base network foundation.
+                  Deployed pfSense as the primary edge firewall and established the base
+                  network foundation for the lab.
                 </p>
               </div>
 
               <div class="timeline-item">
-                <h3>July 2026 — WAN Troubleshooting</h3>
+                <h3>Vehicle — Supra Restoration</h3>
                 <p>
-                  Troubleshot DHCP-delivered static IP behavior, gateway status, WAN assignment,
-                  and ISP handoff during firewall replacement.
+                  Beginning documentation for the 1989 Toyota Supra MK3 restoration and
+                  engine bay disassembly process.
                 </p>
               </div>
 
               <div class="timeline-item">
-                <h3>Next — Cisco Catalyst 3750G</h3>
+                <h3>Fabrication — Novabeast Fursuit</h3>
                 <p>
-                  Configure baseline switch management, local login, SSH access, hostname,
-                  and saved configuration.
+                  Continuing head improvements, visibility, ventilation, electronics planning,
+                  mane work, and overall finish quality.
                 </p>
               </div>
             </div>
           </article>
 
           <article class="card">
-            <h3>Current Focus</h3>
-            <div class="status-list">
-              <div class="status-item">
-                <span>Security+</span>
-                <span>In Progress</span>
-              </div>
-              <div class="status-item">
-                <span>CCNA</span>
-                <span>Next Goal</span>
-              </div>
-              <div class="status-item">
-                <span>Portfolio</span>
-                <span>Building</span>
-              </div>
-              <div class="status-item">
-                <span>Homelab</span>
-                <span>Expanding</span>
-              </div>
+            <h3>Project Identity</h3>
+            <p>
+              InfraSynth Labs documents the systems I build: digital, mechanical,
+              creative, physical, and technical.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Builder</span>
+              <span class="tag">Technician</span>
+              <span class="tag">Creator</span>
+              <span class="tag">Documenter</span>
             </div>
           </article>
         </div>
@@ -358,38 +349,39 @@ Cisco Catalyst 3750G
 
       <section class="section" id="contact">
         <div class="section-heading">
-          <h2>Contact</h2>
+          <h2>Project Hub</h2>
           <p>
-            InfraSynth Labs is the public hub for lab projects, documentation, and infrastructure work.
+            Explore the main project categories or open the technical documentation archive.
           </p>
         </div>
 
         <div class="grid">
           <article class="card">
-            <h3>GitHub</h3>
+            <h3>Projects</h3>
             <p>
-              View public repositories, documentation, and project history.
+              View all active project areas, including infrastructure, restoration,
+              fabrication, writing, and content systems.
             </p>
-            <a class="project-link" href="https://github.com/InfraSynthLabs" target="_blank" rel="noopener noreferrer">
-              github.com/InfraSynthLabs →
-            </a>
+            <a class="project-link" href="/projects/">Open project hub →</a>
           </article>
 
           <article class="card">
             <h3>Documentation</h3>
             <p>
-              Read the current lab notes, build status, and planned infrastructure phases.
+              Read technical notes, deployment records, troubleshooting logs,
+              and structured project writeups.
             </p>
-            <a class="project-link" href="/docs/">
-              Open docs →
-            </a>
+            <a class="project-link" href="/docs/">Open documentation →</a>
           </article>
 
           <article class="card">
-            <h3>Status</h3>
+            <h3>GitHub</h3>
             <p>
-              Currently building the foundation: firewall, DNS, documentation, switching, and virtualization planning.
+              View public repositories, site history, and source files for InfraSynth Labs.
             </p>
+            <a class="project-link" href="https://github.com/InfraSynthLabs" target="_blank" rel="noopener noreferrer">
+              github.com/InfraSynthLabs →
+            </a>
           </article>
         </div>
       </section>
@@ -397,7 +389,7 @@ Cisco Catalyst 3750G
 
     <footer>
       <span>© 2026 InfraSynth Labs</span>
-      <span>Infrastructure • Networking • Security</span>
+      <span>Infrastructure • Fabrication • Restoration • Creative Systems</span>
     </footer>
   </div>
 </body>
