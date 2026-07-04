@@ -1,1 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation | InfraSynth Labs</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
 
+<body>
+  <div class="page">
+    <header>
+      <a class="logo" href="/">
+        <div class="logo-mark">I</div>
+        <span>InfraSynth Labs</span>
+      </a>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/docs/">Docs</a>
+        <a href="/projects/infrastructure.html">Infrastructure</a>
+        <a href="/projects/supra.html">Supra</a>
+        <a href="/projects/fursuit.html">Fursuit</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="docs-hero">
+        <div class="badge">
+          <span class="pulse"></span>
+          Documentation archive
+        </div>
+
+        <h1>
+          <span class="gradient-text">InfraSynth</span><br />
+          Documentation
+        </h1>
+
+        <p class="subtitle">
+          Technical notes, deployment records, troubleshooting logs, project plans,
+          build documentation, and sanitized public writeups for InfraSynth Labs.
+        </p>
+
+        <div class="buttons">
+          <a class="button primary" href="#technical-docs">Technical Docs</a>
+          <a class="button secondary" href="/projects/">Project Hub</a>
+        </div>
+      </section>
+
+      <section class="section" id="technical-docs">
+        <div class="section-heading">
+          <h2>Technical Documentation</h2>
+          <p>
+            Infrastructure-focused documentation for networking, firewalling,
+            virtualization, troubleshooting, and future security work.
+          </p>
+        </div>
+
+        <div class="docs-list">
+          <a class="doc-card" href="/docs/homelab.html">
+            <div>
+              <h3>Homelab Overview</h3>
+              <p>
+                Current infrastructure status, hardware, topology, planned phases,
+                and overall network direction.
+              </p>
+            </div>
+            <span class="tag success-tag">Active</span>
+          </a>
+
+          <a class="doc-card" href="/docs/pfsense.html">
+            <div>
+              <h3>pfSense Edge Firewall</h3>
+              <p>
+                Firewall deployment notes covering WAN, LAN, DHCP, DNS, NAT,
+                and the current edge network foundation.
+              </p>
+            </div>
+            <span class="tag success-tag">Deployed</span>
+          </a>
+
+          <a class="doc-card" href="/docs/wan-troubleshooting.html">
+            <div>
+              <h3>WAN Troubleshooting Log</h3>
+              <p>
+                Notes from replacing the ISP gateway, identifying DHCP-delivered
+                static IP behavior, gateway issues, and restore steps.
+              </p>
+            </div>
+            <span class="tag success-tag">Documenting</span>
+          </a>
+
+          <a class="doc-card" href="/docs/cisco-3750g.html">
+            <div>
+              <h3>Cisco Catalyst 3750G Baseline</h3>
+              <p>
+                Planned baseline configuration for switch hostname, management IP,
+                SSH access, local login, and future VLAN preparation.
+              </p>
+            </div>
+            <span class="tag pending-tag">Pending</span>
+          </a>
+
+          <a class="doc-card" href="/docs/proxmox.html">
+            <div>
+              <h3>Proxmox Virtualization Plan</h3>
+              <p>
+                Planned virtualization host for Linux servers, Docker services,
+                monitoring, lab clients, and future security tooling.
+              </p>
+            </div>
+            <span class="tag pending-tag">Planned</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="project-docs">
+        <div class="section-heading">
+          <h2>Project Documentation</h2>
+          <p>
+            Build logs and structured notes for physical, creative, and content-related projects.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Supra Restoration Notes</h3>
+            <p>
+              Documentation for the 1989 Toyota Supra MK3 restoration, disassembly,
+              engine bay work, parts planning, and future build goals.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">In Progress</span>
+              <span class="tag">Mechanical</span>
+              <span class="tag">Restoration</span>
+            </div>
+            <a class="project-link" href="/projects/supra.html">Open Supra project →</a>
+          </article>
+
+          <article class="card">
+            <h3>Fursuit Fabrication Notes</h3>
+            <p>
+              Notes for the Novabeast fursuit build, including foam shaping,
+              ventilation, visibility, electronics planning, and fur work.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">In Progress</span>
+              <span class="tag">Fabrication</span>
+              <span class="tag">Electronics</span>
+            </div>
+            <a class="project-link" href="/projects/fursuit.html">Open fursuit project →</a>
+          </article>
+
+          <article class="card">
+            <h3>Writing & Worldbuilding Notes</h3>
+            <p>
+              Creative documentation for Crimson Complex, including setting,
+              characters, timelines, factions, and story development.
+            </p>
+            <div class="tag-row">
+              <span class="tag info-tag">Creative</span>
+              <span class="tag">Writing</span>
+              <span class="tag">Worldbuilding</span>
+            </div>
+            <a class="project-link" href="/projects/writing.html">Open writing project →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="documentation-rules">
+        <div class="section-heading">
+          <h2>Documentation Rules</h2>
+          <p>
+            Public notes are sanitized to avoid exposing private infrastructure,
+            personal details, credentials, or sensitive identifiers.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <h3>Public Safety Rules</h3>
+            <p>
+              InfraSynth Labs documentation is public, so sensitive technical
+              details are intentionally removed or generalized.
+            </p>
+
+            <div class="tag-row">
+              <span class="tag">No Credentials</span>
+              <span class="tag">No Public IPs</span>
+              <span class="tag">No Serial Numbers</span>
+              <span class="tag">No Private Keys</span>
+              <span class="tag">No Sensitive Screenshots</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Documentation Style</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>Real work</span>
+                <span>Yes</span>
+              </div>
+              <div class="status-item">
+                <span>Sanitized details</span>
+                <span>Yes</span>
+              </div>
+              <div class="status-item">
+                <span>Portfolio focused</span>
+                <span>Yes</span>
+              </div>
+              <div class="status-item">
+                <span>Private data</span>
+                <span>No</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="roadmap">
+        <div class="section-heading">
+          <h2>Documentation Roadmap</h2>
+          <p>
+            Planned documentation will expand as each project moves from planning
+            into active build, deployment, and troubleshooting.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <div class="timeline">
+              <div class="timeline-item">
+                <h3>Phase 1 — Site Foundation</h3>
+                <p>
+                  Build the public homepage, documentation landing page, shared CSS,
+                  and project hub structure.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h3>Phase 2 — Infrastructure Documentation</h3>
+                <p>
+                  Add homelab overview, pfSense deployment notes, WAN troubleshooting,
+                  Cisco baseline planning, and Proxmox preparation.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h3>Phase 3 — Project Build Logs</h3>
+                <p>
+                  Add structured documentation for Supra restoration, fursuit fabrication,
+                  writing/worldbuilding, and content creation systems.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h3>Phase 4 — Mature Portfolio</h3>
+                <p>
+                  Add diagrams, photos, sanitized screenshots, lessons learned,
+                  and completed project writeups.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Next Pages</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>Homelab</span>
+                <span>Next</span>
+              </div>
+              <div class="status-item">
+                <span>pfSense</span>
+                <span>Next</span>
+              </div>
+              <div class="status-item">
+                <span>WAN Log</span>
+                <span>Next</span>
+              </div>
+              <div class="status-item">
+                <span>Cisco</span>
+                <span>Pending</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="links">
+        <div class="section-heading">
+          <h2>Navigation</h2>
+          <p>
+            Return to the main site or explore the project hub.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Home</h3>
+            <p>
+              Return to the main InfraSynth Labs landing page.
+            </p>
+            <a class="project-link" href="/">Go home →</a>
+          </article>
+
+          <article class="card">
+            <h3>Project Hub</h3>
+            <p>
+              Browse infrastructure, restoration, fabrication, writing, and media projects.
+            </p>
+            <a class="project-link" href="/projects/">Open projects →</a>
+          </article>
+
+          <article class="card">
+            <h3>Infrastructure</h3>
+            <p>
+              Open the primary professional project area for networking and systems work.
+            </p>
+            <a class="project-link" href="/projects/infrastructure.html">Open infrastructure →</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 InfraSynth Labs</span>
+      <span>Documentation • Projects • Build Logs</span>
+    </footer>
+  </div>
+</body>
+</html>
