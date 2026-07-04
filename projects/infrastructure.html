@@ -1,1 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infrastructure Lab | InfraSynth Labs</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
 
+<body>
+  <div class="page">
+    <header>
+      <a class="logo" href="/">
+        <div class="logo-mark">I</div>
+        <span>InfraSynth Labs</span>
+      </a>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/docs/">Docs</a>
+        <a href="/docs/homelab.html">Homelab</a>
+        <a href="/docs/pfsense.html">pfSense</a>
+        <a href="/docs/cisco-3750g.html">Cisco</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="docs-hero">
+        <div class="badge">
+          <span class="pulse"></span>
+          Primary professional project
+        </div>
+
+        <h1>
+          <span class="gradient-text">Infrastructure</span><br />
+          Lab
+        </h1>
+
+        <p class="subtitle">
+          A hands-on infrastructure project focused on firewalling, networking, DNS, DHCP,
+          Cisco switching, virtualization, documentation, troubleshooting, and future security monitoring.
+        </p>
+
+        <div class="buttons">
+          <a class="button primary" href="/docs/homelab.html">Open Homelab Docs</a>
+          <a class="button secondary" href="/docs/pfsense.html">View pfSense Notes</a>
+        </div>
+      </section>
+
+      <section class="section" id="overview">
+        <div class="section-heading">
+          <h2>Project Overview</h2>
+          <p>
+            This is the main career-facing project inside InfraSynth Labs.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <h3>Purpose</h3>
+            <p>
+              The infrastructure lab exists to build and document real technical experience.
+              Instead of only describing networking and systems concepts, this project records
+              actual deployment decisions, troubleshooting steps, hardware changes, and future
+              improvements.
+            </p>
+
+            <p>
+              The current focus is building a stable network foundation with pfSense before moving
+              into managed switching, virtualization, segmentation, monitoring, and public service isolation.
+            </p>
+
+            <div class="tag-row">
+              <span class="tag success-tag">Primary Focus</span>
+              <span class="tag">Networking</span>
+              <span class="tag">Firewalling</span>
+              <span class="tag">Systems</span>
+              <span class="tag">Security</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Current Status</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>pfSense Firewall</span>
+                <span>Deployed</span>
+              </div>
+              <div class="status-item">
+                <span>Static Public IP</span>
+                <span>Online</span>
+              </div>
+              <div class="status-item">
+                <span>Cloudflare Pages</span>
+                <span>Online</span>
+              </div>
+              <div class="status-item">
+                <span>Cisco 3750G</span>
+                <span>Pending</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section-heading">
+          <h2>Skills Demonstrated</h2>
+          <p>
+            This project is designed to show practical infrastructure skills through real work.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Networking</h3>
+            <p>
+              Network topology planning, gateway design, WAN/LAN separation, DNS, DHCP,
+              routing concepts, and future VLAN segmentation.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Routing</span>
+              <span class="tag">DHCP</span>
+              <span class="tag">DNS</span>
+              <span class="tag">VLANs</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Firewalling</h3>
+            <p>
+              pfSense deployment, WAN setup, NAT, DNS Resolver, firewall policy planning,
+              and future least-privilege segmentation.
+            </p>
+            <div class="tag-row">
+              <span class="tag success-tag">pfSense</span>
+              <span class="tag">NAT</span>
+              <span class="tag">Rules</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Troubleshooting</h3>
+            <p>
+              WAN gateway behavior, DHCP-delivered static IPs, interface mapping,
+              ISP handoff behavior, and connectivity restoration.
+            </p>
+            <div class="tag-row">
+              <span class="tag success-tag">Documenting</span>
+              <span class="tag">WAN</span>
+              <span class="tag">Gateway</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Switching</h3>
+            <p>
+              Cisco Catalyst 3750G baseline planning, management access, SSH setup,
+              future trunking, and VLAN preparation.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">Pending</span>
+              <span class="tag">Cisco</span>
+              <span class="tag">3750G</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Virtualization</h3>
+            <p>
+              Proxmox is planned for future Linux servers, Docker services, monitoring,
+              internal tools, and isolated lab workloads.
+            </p>
+            <div class="tag-row">
+              <span class="tag pending-tag">Planned</span>
+              <span class="tag">Proxmox</span>
+              <span class="tag">Linux</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Documentation</h3>
+            <p>
+              Public-safe technical writeups, sanitized configuration notes, build logs,
+              troubleshooting records, and project roadmaps.
+            </p>
+            <div class="tag-row">
+              <span class="tag success-tag">Active</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Portfolio</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="architecture">
+        <div class="section-heading">
+          <h2>Architecture</h2>
+          <p>
+            The current network is intentionally simple while the foundation is stabilized.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <h3>Current Topology</h3>
+            <pre class="diagram">Internet
+   │
+Fiber ONT
+   │
+pfSense Firewall
+   │
+Lab Network
+   │
+Clients / Server Hardware</pre>
+          </article>
+
+          <article class="card">
+            <h3>Foundation Services</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>Routing</span>
+                <span>pfSense</span>
+              </div>
+              <div class="status-item">
+                <span>DHCP</span>
+                <span>Active</span>
+              </div>
+              <div class="status-item">
+                <span>DNS</span>
+                <span>Active</span>
+              </div>
+              <div class="status-item">
+                <span>NAT</span>
+                <span>Active</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card full-card">
+            <h3>Planned Topology</h3>
+            <pre class="diagram">Internet
+   │
+Fiber ONT
+   │
+pfSense Firewall
+   │
+Cisco Catalyst 3750G
+   │
+├── Admin Workstation
+├── Proxmox Host
+├── Lab Clients
+├── Future Wi-Fi AP
+└── Future Server / Services</pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="components">
+        <div class="section-heading">
+          <h2>Core Components</h2>
+          <p>
+            Each component is introduced in stages to keep the lab stable and easy to troubleshoot.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Role</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pfSense Firewall</td>
+                <td>Edge firewall, router, DHCP, DNS foundation, NAT</td>
+                <td>Deployed</td>
+              </tr>
+              <tr>
+                <td>Fiber ONT</td>
+                <td>ISP handoff for WAN connectivity</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>Cloudflare Pages</td>
+                <td>Public hosting for InfraSynth Labs</td>
+                <td>Online</td>
+              </tr>
+              <tr>
+                <td>Cloudflare DNS</td>
+                <td>Public DNS management for the domain</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>Cisco Catalyst 3750G</td>
+                <td>Planned core switch and future VLAN work</td>
+                <td>Pending</td>
+              </tr>
+              <tr>
+                <td>Proxmox Host</td>
+                <td>Future virtualization platform</td>
+                <td>Planned</td>
+              </tr>
+              <tr>
+                <td>Monitoring Stack</td>
+                <td>Future logs, uptime, performance, and visibility</td>
+                <td>Planned</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="milestones">
+        <div class="section-heading">
+          <h2>Milestones</h2>
+          <p>
+            The project roadmap is split into practical phases.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <div class="timeline">
+              <div class="timeline-item">
+                <h3>Phase 1 — Public Site Foundation</h3>
+                <p>
+                  Build the InfraSynth Labs site, connect GitHub to Cloudflare Pages,
+                  and create a public project hub for documentation.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h3>Phase 2 — pfSense Edge Firewall</h3>
+                <p>
+                  Deploy pfSense as the primary firewall, establish LAN DHCP/DNS,
+                  confirm WAN connectivity, and document the firewall foundation.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h3>Phase 3 — WAN Troubleshooting Documentation</h3>
+                <p>
+                  Record the static-IP-through-DHCP behavior, gateway issue, interface checks,
+                  and restore process as a real troubleshooting writeup.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h3>Phase 4 — Cisco Switching</h3>
+                <p>
+                  Configure the Cisco Catalyst 3750G with hostname, management IP,
+                  local login, SSH, and a saved baseline configuration.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h3>Phase 5 — Proxmox Virtualization</h3>
+                <p>
+                  Install Proxmox, create the first Linux VM, add internal services,
+                  and prepare for future monitoring and Docker workloads.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h3>Phase 6 — Segmentation & Security</h3>
+                <p>
+                  Add VLANs, firewall rules, management separation, service isolation,
+                  and better visibility across the network.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Next Actions</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>WAN Log</span>
+                <span>Write</span>
+              </div>
+              <div class="status-item">
+                <span>Cisco Baseline</span>
+                <span>Prepare</span>
+              </div>
+              <div class="status-item">
+                <span>Switch Config</span>
+                <span>Pending</span>
+              </div>
+              <div class="status-item">
+                <span>Proxmox Plan</span>
+                <span>Draft</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="documentation">
+        <div class="section-heading">
+          <h2>Documentation</h2>
+          <p>
+            Technical writeups are separated from the project page so the site stays organized.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Homelab Overview</h3>
+            <p>
+              Current status, hardware, topology, network plan, security direction,
+              and project roadmap.
+            </p>
+            <a class="project-link" href="/docs/homelab.html">Open homelab docs →</a>
+          </article>
+
+          <article class="card">
+            <h3>pfSense Edge Firewall</h3>
+            <p>
+              Deployment notes for WAN, LAN, DHCP, DNS, NAT, firewall policy,
+              and future work.
+            </p>
+            <a class="project-link" href="/docs/pfsense.html">Open pfSense docs →</a>
+          </article>
+
+          <article class="card">
+            <h3>WAN Troubleshooting</h3>
+            <p>
+              Troubleshooting log for ISP handoff behavior, DHCP static assignment,
+              gateway status, and restore steps.
+            </p>
+            <a class="project-link" href="/docs/wan-troubleshooting.html">Open WAN log →</a>
+          </article>
+
+          <article class="card">
+            <h3>Cisco 3750G Baseline</h3>
+            <p>
+              Planned baseline configuration for switch management, SSH, hostname,
+              local login, and VLAN preparation.
+            </p>
+            <a class="project-link" href="/docs/cisco-3750g.html">Open Cisco docs →</a>
+          </article>
+
+          <article class="card">
+            <h3>Proxmox Plan</h3>
+            <p>
+              Planned virtualization host documentation for Linux servers, Docker,
+              monitoring, and internal services.
+            </p>
+            <a class="project-link" href="/docs/proxmox.html">Open Proxmox docs →</a>
+          </article>
+
+          <article class="card">
+            <h3>Documentation Archive</h3>
+            <p>
+              Main index for technical notes, deployment records, troubleshooting logs,
+              and project documentation.
+            </p>
+            <a class="project-link" href="/docs/">Open docs archive →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="security">
+        <div class="section-heading">
+          <h2>Security Direction</h2>
+          <p>
+            Public documentation is useful, but sensitive details stay private.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card wide-card">
+            <h3>Public-Safe Documentation</h3>
+            <p>
+              This project is public, so infrastructure details are sanitized before publishing.
+              The goal is to show technical decision-making without exposing the live environment.
+            </p>
+
+            <div class="tag-row">
+              <span class="tag">No Credentials</span>
+              <span class="tag">No Public IPs</span>
+              <span class="tag">No MAC Addresses</span>
+              <span class="tag">No Serial Numbers</span>
+              <span class="tag">No Private Keys</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Future Security Work</h3>
+            <div class="status-list">
+              <div class="status-item">
+                <span>VLANs</span>
+                <span>Planned</span>
+              </div>
+              <div class="status-item">
+                <span>Firewall Rules</span>
+                <span>Planned</span>
+              </div>
+              <div class="status-item">
+                <span>Monitoring</span>
+                <span>Planned</span>
+              </div>
+              <div class="status-item">
+                <span>Logging</span>
+                <span>Planned</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="links">
+        <div class="section-heading">
+          <h2>Navigation</h2>
+          <p>
+            Continue into the documentation archive or return to the project hub.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Project Hub</h3>
+            <p>
+              Return to all InfraSynth Labs project areas.
+            </p>
+            <a class="project-link" href="/projects/">Open project hub →</a>
+          </article>
+
+          <article class="card">
+            <h3>Documentation</h3>
+            <p>
+              Open the technical documentation archive.
+            </p>
+            <a class="project-link" href="/docs/">Open docs →</a>
+          </article>
+
+          <article class="card">
+            <h3>Home</h3>
+            <p>
+              Return to the main InfraSynth Labs landing page.
+            </p>
+            <a class="project-link" href="/">Go home →</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 InfraSynth Labs</span>
+      <span>Infrastructure • Networking • Firewalling • Security</span>
+    </footer>
+  </div>
+</body>
+</html>
