@@ -1,396 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InfraSynth Labs</title>
-  <link rel="stylesheet" href="/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="InfraSynth Labs is the personal technical portfolio of Synthicate, documenting networking, infrastructure, self-hosting, and other ongoing projects."
+    >
+
+    <title>InfraSynth Labs</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="page">
-    <header>
-      <a class="logo" href="/">
-        <div class="logo-mark">I</div>
-        <span>InfraSynth Labs</span>
-      </a>
 
-      <nav>
-        <a href="#projects">Projects</a>
-        <a href="#featured">Featured</a>
-        <a href="#lab">Current Lab</a>
-        <a href="/projects/">Project Hub</a>
-        <a href="/docs/">Docs</a>
-      </nav>
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a href="/" class="site-name">
+                InfraSynth Labs
+            </a>
+
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="/" class="active">Home</a>
+                <a href="/projects/">Projects</a>
+                <a href="/notes/">Notes</a>
+                <a href="/about/">About</a>
+                <a
+                    href="https://github.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+            </nav>
+
+        </div>
     </header>
 
+
     <main>
-      <section class="hero">
-        <div>
-          <div class="badge">
-            <span class="pulse"></span>
-            Central project hub online
-          </div>
 
-          <h1>
-            <span class="gradient-text">InfraSynth</span><br />
-            Labs
-          </h1>
+        <section class="intro">
+            <div class="container">
 
-          <p class="subtitle">
-            A personal project hub documenting infrastructure, networking, fabrication,
-            vehicle restoration, creative systems, and hands-on technical builds.
-          </p>
+                <h1>Hi, I'm Synthicate.</h1>
 
-          <div class="buttons">
-            <a class="button primary" href="#projects">View Projects</a>
-            <a class="button secondary" href="/docs/">Open Documentation</a>
-          </div>
-        </div>
-
-        <div class="terminal-card">
-          <div class="terminal-top">
-            <div class="terminal-title">PROJECT STATUS PANEL</div>
-            <div class="terminal-controls">
-              <span class="terminal-button"></span>
-              <span class="terminal-button"></span>
-              <span class="terminal-button"></span>
-            </div>
-          </div>
-
-          <div class="terminal-body">
-            <div class="line"><span class="prompt">infra@synth</span>:<span class="cmd">~/projects$</span> status</div>
-            <div class="line">builder • technician • creator • documenter</div>
-            <div class="line comment"># Active project areas</div>
-            <div class="line"><span class="success">[ACTIVE]</span> infrastructure lab</div>
-            <div class="line"><span class="success">[ACTIVE]</span> public documentation</div>
-            <div class="line"><span class="pending">[BUILD]</span> 1989 Toyota Supra restoration</div>
-            <div class="line"><span class="pending">[BUILD]</span> Novabeast fursuit fabrication</div>
-            <div class="line"><span class="pending">[WORLD]</span> Crimson Complex writing project</div>
-            <div class="line"><span class="pending">[MEDIA]</span> streaming and content systems</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="featured">
-        <div class="section-heading">
-          <h2>Featured Focus</h2>
-          <p>
-            InfraSynth Labs leads with infrastructure and technical systems, while also documenting
-            physical builds, restoration work, and creative projects.
-          </p>
-        </div>
-
-        <div class="grid">
-          <article class="card wide-card">
-            <h3>Infrastructure Lab</h3>
-            <p>
-              A practical homelab focused on firewalling, networking, DNS, DHCP, Cisco switching,
-              virtualization, documentation, and future security monitoring.
-            </p>
-            <div class="tag-row">
-              <span class="tag success-tag">Primary Focus</span>
-              <span class="tag">pfSense</span>
-              <span class="tag">Networking</span>
-              <span class="tag">Security</span>
-              <span class="tag">Documentation</span>
-            </div>
-            <a class="project-link" href="/projects/infrastructure.html">View infrastructure project →</a>
-          </article>
-
-          <article class="card">
-            <h3>Current Status</h3>
-            <div class="status-list">
-              <div class="status-item">
-                <span>pfSense</span>
-                <span>Deployed</span>
-              </div>
-              <div class="status-item">
-                <span>Cloudflare Pages</span>
-                <span>Online</span>
-              </div>
-              <div class="status-item">
-                <span>Cisco 3750G</span>
-                <span>Pending</span>
-              </div>
-              <div class="status-item">
-                <span>Proxmox</span>
-                <span>Planned</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="projects">
-        <div class="section-heading">
-          <h2>Project Areas</h2>
-          <p>
-            Each project area is documented as a build log, technical record, and portfolio piece.
-          </p>
-        </div>
-
-        <div class="grid">
-          <article class="card">
-            <h3>Infrastructure & Homelab</h3>
-            <p>
-              Firewall deployment, network design, Cisco switching, Proxmox planning,
-              DNS, DHCP, troubleshooting, and future segmentation.
-            </p>
-            <div class="tag-row">
-              <span class="tag success-tag">Active</span>
-              <span class="tag">IT</span>
-              <span class="tag">Networking</span>
-              <span class="tag">Security</span>
-            </div>
-            <a class="project-link" href="/projects/infrastructure.html">Open project →</a>
-          </article>
-
-          <article class="card">
-            <h3>1989 Supra Restoration</h3>
-            <p>
-              Restoration and build documentation for a 1989 Toyota Supra MK3, including
-              disassembly, engine bay work, parts planning, and long-term build goals.
-            </p>
-            <div class="tag-row">
-              <span class="tag pending-tag">In Progress</span>
-              <span class="tag">Restoration</span>
-              <span class="tag">Mechanical</span>
-              <span class="tag">Build Log</span>
-            </div>
-            <a class="project-link" href="/projects/supra.html">Open project →</a>
-          </article>
-
-          <article class="card">
-            <h3>Fursuit Fabrication</h3>
-            <p>
-              Novabeast fursuit build documentation covering foam work, shaping,
-              ventilation, electronics planning, fur work, and design revisions.
-            </p>
-            <div class="tag-row">
-              <span class="tag pending-tag">In Progress</span>
-              <span class="tag">Fabrication</span>
-              <span class="tag">Foam</span>
-              <span class="tag">Electronics</span>
-            </div>
-            <a class="project-link" href="/projects/fursuit.html">Open project →</a>
-          </article>
-
-          <article class="card">
-            <h3>Writing & Worldbuilding</h3>
-            <p>
-              Creative development for Crimson Complex, including characters, timelines,
-              factions, setting design, and long-form story structure.
-            </p>
-            <div class="tag-row">
-              <span class="tag info-tag">Creative</span>
-              <span class="tag">Worldbuilding</span>
-              <span class="tag">Writing</span>
-              <span class="tag">Lore</span>
-            </div>
-            <a class="project-link" href="/projects/writing.html">Open project →</a>
-          </article>
-
-          <article class="card">
-            <h3>Content Creation Systems</h3>
-            <p>
-              Streaming setup, branding, schedules, technical workflows, community building,
-              and content experiments across live and short-form platforms.
-            </p>
-            <div class="tag-row">
-              <span class="tag info-tag">Media</span>
-              <span class="tag">Streaming</span>
-              <span class="tag">Workflow</span>
-              <span class="tag">Branding</span>
-            </div>
-            <a class="project-link" href="/projects/content.html">Open project →</a>
-          </article>
-
-          <article class="card">
-            <h3>Documentation Archive</h3>
-            <p>
-              Structured notes, technical documentation, troubleshooting records,
-              project roadmaps, and sanitized public writeups.
-            </p>
-            <div class="tag-row">
-              <span class="tag success-tag">Active</span>
-              <span class="tag">Docs</span>
-              <span class="tag">Notes</span>
-              <span class="tag">Portfolio</span>
-            </div>
-            <a class="project-link" href="/docs/">Open docs →</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="lab">
-        <div class="section-heading">
-          <h2>Current Infrastructure Lab</h2>
-          <p>
-            The infrastructure side of InfraSynth Labs is the main professional portfolio focus.
-          </p>
-        </div>
-
-        <div class="grid">
-          <article class="card wide-card">
-            <h3>Current Topology</h3>
-            <pre class="diagram">Internet
-   │
-Fiber ONT
-   │
-pfSense Firewall
-   │
-Lab Network
-   │
-Clients / Server Hardware</pre>
-          </article>
-
-          <article class="card">
-            <h3>Foundation</h3>
-            <div class="status-list">
-              <div class="status-item">
-                <span>Firewall</span>
-                <span>pfSense</span>
-              </div>
-              <div class="status-item">
-                <span>WAN</span>
-                <span>Static IP</span>
-              </div>
-              <div class="status-item">
-                <span>DNS</span>
-                <span>Active</span>
-              </div>
-              <div class="status-item">
-                <span>DHCP</span>
-                <span>Active</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="card full-card">
-            <h3>Planned Infrastructure Topology</h3>
-            <pre class="diagram">Internet
-   │
-Fiber ONT
-   │
-pfSense Firewall
-   │
-Cisco Catalyst 3750G
-   │
-├── Admin Workstation
-├── Proxmox Host
-├── Lab Clients
-├── Future Wi-Fi AP
-└── Future Server / Services</pre>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="journal">
-        <div class="section-heading">
-          <h2>Build Journal</h2>
-          <p>
-            Current milestones across technical, physical, and creative projects.
-          </p>
-        </div>
-
-        <div class="grid">
-          <article class="card wide-card">
-            <div class="timeline">
-              <div class="timeline-item">
-                <h3>InfraSynth Labs — Site Rebuild</h3>
-                <p>
-                  Rebuilding the site as a central hub for infrastructure, restoration,
-                  fabrication, writing, and content systems.
+                <p class="intro-lead">
+                    I work in IT and network operations. In my free time,
+                    I usually end up building servers, changing my network,
+                    or starting projects significantly larger than I planned.
                 </p>
-              </div>
 
-              <div class="timeline-item">
-                <h3>Infrastructure — pfSense Deployment</h3>
                 <p>
-                  Deployed pfSense as the primary edge firewall and established the base
-                  network foundation for the lab.
+                    This site is where I document them.
                 </p>
-              </div>
 
-              <div class="timeline-item">
-                <h3>Vehicle — Supra Restoration</h3>
-                <p>
-                  Beginning documentation for the 1989 Toyota Supra MK3 restoration and
-                  engine bay disassembly process.
-                </p>
-              </div>
+                <div class="current-work">
+                    <span class="section-label">Currently</span>
 
-              <div class="timeline-item">
-                <h3>Fabrication — Novabeast Fursuit</h3>
-                <p>
-                  Continuing head improvements, visibility, ventilation, electronics planning,
-                  mane work, and overall finish quality.
-                </p>
-              </div>
+                    <p>
+                        Working on my homelab, rebuilding a 1989 Toyota Supra,
+                        and improving a wearable electronics project.
+                    </p>
+                </div>
+
             </div>
-          </article>
+        </section>
 
-          <article class="card">
-            <h3>Project Identity</h3>
-            <p>
-              InfraSynth Labs documents the systems I build: digital, mechanical,
-              creative, physical, and technical.
-            </p>
-            <div class="tag-row">
-              <span class="tag">Builder</span>
-              <span class="tag">Technician</span>
-              <span class="tag">Creator</span>
-              <span class="tag">Documenter</span>
+
+        <section class="section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-number">01 /</span>
+                    <h2>Recent Projects</h2>
+                </div>
+
+
+                <article class="project-entry">
+
+                    <h3>
+                        <a href="/projects/homelab.html">
+                            pfSense Homelab
+                        </a>
+                    </h3>
+
+                    <p>
+                        My home network, VLAN layout, firewall rules, and the
+                        troubleshooting that comes with rebuilding a network
+                        while actively using it.
+                    </p>
+
+                    <div class="project-meta">
+                        pfSense · VLANs · DHCP · DNS
+                    </div>
+
+                    <a href="/projects/homelab.html" class="text-link">
+                        View project →
+                    </a>
+
+                </article>
+
+
+                <article class="project-entry">
+
+                    <h3>
+                        <a href="/projects/minecraft-server.html">
+                            Crimson Complex Server
+                        </a>
+                    </h3>
+
+                    <p>
+                        A heavily modified Minecraft server running through
+                        Docker. Mostly an ongoing lesson in Linux, containers,
+                        networking, and finding out what destroys server
+                        performance.
+                    </p>
+
+                    <div class="project-meta">
+                        Docker · Linux · NeoForge · Server Administration
+                    </div>
+
+                    <a
+                        href="/projects/minecraft-server.html"
+                        class="text-link"
+                    >
+                        View project →
+                    </a>
+
+                </article>
+
+
+                <article class="project-entry">
+
+                    <h3>
+                        <a href="/projects/supra.html">
+                            1989 Toyota Supra
+                        </a>
+                    </h3>
+
+                    <p>
+                        I bought a non-running MK3 Supra that had been sitting
+                        for around six years. The current goal is to diagnose
+                        the engine, rebuild what is needed, and eventually
+                        return the car to regular use.
+                    </p>
+
+                    <div class="project-meta">
+                        Restoration · Diagnostics · Mechanical
+                    </div>
+
+                    <a href="/projects/supra.html" class="text-link">
+                        View project →
+                    </a>
+
+                </article>
+
+
+                <article class="project-entry">
+
+                    <h3>
+                        <a href="/projects/wearable-electronics.html">
+                            Wearable Electronics
+                        </a>
+                    </h3>
+
+                    <p>
+                        An ongoing wearable project involving internal cooling,
+                        visibility improvements, electronic facial components,
+                        and making the internal systems easier to maintain.
+                    </p>
+
+                    <div class="project-meta">
+                        Electronics · Cooling · Fabrication · Prototyping
+                    </div>
+
+                    <a
+                        href="/projects/wearable-electronics.html"
+                        class="text-link"
+                    >
+                        View project →
+                    </a>
+
+                </article>
+
             </div>
-          </article>
-        </div>
-      </section>
+        </section>
 
-      <section class="section" id="contact">
-        <div class="section-heading">
-          <h2>Project Hub</h2>
-          <p>
-            Explore the main project categories or open the technical documentation archive.
-          </p>
-        </div>
 
-        <div class="grid">
-          <article class="card">
-            <h3>Projects</h3>
-            <p>
-              View all active project areas, including infrastructure, restoration,
-              fabrication, writing, and content systems.
-            </p>
-            <a class="project-link" href="/projects/">Open project hub →</a>
-          </article>
+        <section class="section">
+            <div class="container">
 
-          <article class="card">
-            <h3>Documentation</h3>
-            <p>
-              Read technical notes, deployment records, troubleshooting logs,
-              and structured project writeups.
-            </p>
-            <a class="project-link" href="/docs/">Open documentation →</a>
-          </article>
+                <div class="section-heading">
+                    <span class="section-number">02 /</span>
+                    <h2>Recent Notes</h2>
+                </div>
 
-          <article class="card">
-            <h3>GitHub</h3>
-            <p>
-              View public repositories, site history, and source files for InfraSynth Labs.
-            </p>
-            <a class="project-link" href="https://github.com/InfraSynthLabs" target="_blank" rel="noopener noreferrer">
-              github.com/InfraSynthLabs →
-            </a>
-          </article>
-        </div>
-      </section>
+                <div class="notes-list">
+
+                    <a
+                        href="/notes/gigabit-speed-troubleshooting.html"
+                        class="note-entry"
+                    >
+                        <span class="note-date">July 2026</span>
+
+                        <span class="note-title">
+                            Troubleshooting a sudden drop from gigabit speeds
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="/notes/pfsense-segmentation.html"
+                        class="note-entry"
+                    >
+                        <span class="note-date">June 2026</span>
+
+                        <span class="note-title">
+                            Rebuilding my network around pfSense and VLANs
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="/notes/minecraft-server-performance.html"
+                        class="note-entry"
+                    >
+                        <span class="note-date">June 2026</span>
+
+                        <span class="note-title">
+                            Tracking down performance problems on a modded server
+                        </span>
+                    </a>
+
+                </div>
+
+                <a href="/notes/" class="text-link section-link">
+                    View all notes →
+                </a>
+
+            </div>
+        </section>
+
+
+        <section class="section about-preview">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-number">03 /</span>
+                    <h2>About This Site</h2>
+                </div>
+
+                <p>
+                    InfraSynth Labs is my place to keep track of the things I
+                    build and what I learn while working on them.
+                </p>
+
+                <p>
+                    Most of the site will probably revolve around networking,
+                    servers, infrastructure, and troubleshooting. Some projects
+                    will have almost nothing to do with IT.
+                </p>
+
+                <p>
+                    I'm fine with that.
+                </p>
+
+                <a href="/about/" class="text-link">
+                    More about me →
+                </a>
+
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-      <span>© 2026 InfraSynth Labs</span>
-      <span>Infrastructure • Fabrication • Restoration • Creative Systems</span>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+
+            <p>
+                © 2026 InfraSynth Labs
+            </p>
+
+            <p>
+                Built by Synthicate.
+            </p>
+
+        </div>
     </footer>
-  </div>
+
 </body>
+
 </html>
