@@ -11,10 +11,10 @@
 
     <meta
         name="description"
-        content="The technical portfolio of Gage Campbell, documenting networking, infrastructure, servers, and ongoing projects."
+        content="Gage Campbell is an IT and network infrastructure professional with experience in network operations, technical support leadership, systems administration, and infrastructure troubleshooting."
     >
 
-    <title>Gage Campbell | InfraSynth Labs</title>
+    <title>Gage Campbell | IT & Network Infrastructure</title>
 
 
     <style>
@@ -22,6 +22,7 @@
         :root {
             --background: #f4f2f0;
             --surface: #ffffff;
+            --surface-alt: #ebe7e4;
 
             --text: #1c1c1f;
             --secondary-text: #454549;
@@ -199,21 +200,30 @@
         }
 
         .intro h1 {
-            max-width: 760px;
+            max-width: 800px;
 
-            margin: 0 0 24px;
+            margin: 0 0 12px;
 
             color: var(--text);
 
-            font-size: clamp(44px, 6vw, 66px);
+            font-size: clamp(46px, 7vw, 72px);
             font-weight: 700;
             line-height: 1.05;
 
             letter-spacing: -2px;
         }
 
+        .role-title {
+            margin: 0 0 28px;
+
+            color: var(--red);
+
+            font-size: 22px;
+            font-weight: 700;
+        }
+
         .intro-text {
-            max-width: 760px;
+            max-width: 790px;
 
             margin: 0 0 16px;
 
@@ -223,10 +233,54 @@
             line-height: 1.55;
         }
 
-        .current {
-            max-width: 760px;
+        .intro-actions {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
 
             margin-top: 34px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 11px 18px;
+
+            background: var(--red);
+
+            border: 2px solid var(--red);
+
+            color: white;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: var(--red-dark);
+            border-color: var(--red-dark);
+        }
+
+        .button-secondary {
+            background: transparent;
+
+            color: var(--red);
+        }
+
+        .button-secondary:hover {
+            background: var(--red-light);
+            border-color: var(--red);
+
+            color: var(--red-dark);
+        }
+
+        .career-focus {
+            max-width: 790px;
+
+            margin-top: 38px;
             padding: 20px 22px;
 
             background: var(--red-light);
@@ -235,7 +289,7 @@
             border-left: 5px solid var(--red);
         }
 
-        .current span {
+        .career-focus span {
             display: block;
 
             margin-bottom: 5px;
@@ -249,7 +303,7 @@
             text-transform: uppercase;
         }
 
-        .current p {
+        .career-focus p {
             margin: 0;
 
             color: var(--secondary-text);
@@ -301,7 +355,7 @@
         }
 
         .section-description {
-            max-width: 720px;
+            max-width: 760px;
 
             margin: -14px 0 34px 52px;
 
@@ -310,11 +364,146 @@
 
 
         /* ----------------------------------------
+           EXPERIENCE
+        ---------------------------------------- */
+
+        .experience {
+            max-width: 850px;
+
+            margin-bottom: 24px;
+            padding: 28px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--red);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            gap: 30px;
+
+            margin-bottom: 14px;
+        }
+
+        .experience h3 {
+            margin: 0 0 3px;
+
+            color: var(--text);
+
+            font-size: 24px;
+            line-height: 1.3;
+        }
+
+        .company {
+            margin: 0;
+
+            color: var(--red);
+
+            font-weight: 700;
+        }
+
+        .experience-date {
+            color: var(--muted);
+
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+
+            white-space: nowrap;
+        }
+
+        .experience ul {
+            max-width: 760px;
+
+            margin: 18px 0 0;
+            padding-left: 22px;
+
+            color: var(--secondary-text);
+        }
+
+        .experience li {
+            margin-bottom: 8px;
+        }
+
+        .experience li::marker {
+            color: var(--red);
+        }
+
+
+        /* ----------------------------------------
+           SKILLS
+        ---------------------------------------- */
+
+        .skill-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            gap: 18px;
+
+            max-width: 850px;
+        }
+
+        .skill-group {
+            padding: 24px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--red);
+        }
+
+        .skill-group h3 {
+            margin: 0 0 14px;
+
+            color: var(--text);
+
+            font-size: 19px;
+        }
+
+        .skill-group p {
+            margin: 0;
+
+            color: var(--secondary-text);
+
+            line-height: 1.7;
+        }
+
+        .certifications {
+            max-width: 850px;
+
+            margin-top: 24px;
+            padding: 24px 26px;
+
+            background: var(--red-light);
+
+            border: 1px solid #dfbfc3;
+        }
+
+        .certifications h3 {
+            margin: 0 0 10px;
+
+            color: var(--red-dark);
+
+            font-size: 19px;
+        }
+
+        .certifications p {
+            margin: 0;
+
+            color: var(--secondary-text);
+        }
+
+
+        /* ----------------------------------------
            PROJECTS
         ---------------------------------------- */
 
         .project {
-            max-width: 820px;
+            max-width: 850px;
 
             margin: 0 0 24px;
             padding: 26px 28px;
@@ -342,8 +531,6 @@
 
             font-size: 24px;
             line-height: 1.3;
-
-            letter-spacing: -0.2px;
         }
 
         .project h3 a {
@@ -355,7 +542,7 @@
         }
 
         .project p {
-            max-width: 730px;
+            max-width: 760px;
 
             margin: 0 0 14px;
 
@@ -392,70 +579,19 @@
 
 
         /* ----------------------------------------
-           NOTES
-        ---------------------------------------- */
-
-        .notes {
-            max-width: 820px;
-
-            margin-bottom: 28px;
-
-            background: var(--surface);
-
-            border: 1px solid var(--border);
-        }
-
-        .note {
-            display: grid;
-
-            grid-template-columns: 120px minmax(0, 1fr);
-
-            gap: 22px;
-
-            padding: 20px 24px;
-
-            border-bottom: 1px solid var(--border);
-
-            text-decoration: none;
-        }
-
-        .note:last-child {
-            border-bottom: 0;
-        }
-
-        .note:hover {
-            background: var(--red-light);
-        }
-
-        .note time {
-            color: var(--red);
-
-            font-family: "Courier New", Courier, monospace;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .note span {
-            color: var(--text);
-
-            line-height: 1.5;
-        }
-
-
-        /* ----------------------------------------
            ABOUT
         ---------------------------------------- */
 
-        .about-preview p {
-            max-width: 760px;
-
-            margin: 0 0 17px;
-
-            color: var(--secondary-text);
+        .about-content {
+            max-width: 790px;
         }
 
-        .about-preview .project-link {
-            margin-top: 8px;
+        .about-content p {
+            margin: 0 0 18px;
+
+            color: var(--secondary-text);
+
+            font-size: 18px;
         }
 
 
@@ -532,11 +668,13 @@
             }
 
             .intro h1 {
-                margin-bottom: 22px;
-
-                font-size: 44px;
+                font-size: 46px;
 
                 letter-spacing: -1.5px;
+            }
+
+            .role-title {
+                font-size: 19px;
             }
 
             .intro-text {
@@ -560,6 +698,20 @@
                 margin-left: 0;
             }
 
+            .experience {
+                padding: 22px 20px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+
+                gap: 6px;
+            }
+
+            .skill-grid {
+                grid-template-columns: 1fr;
+            }
+
             .project {
                 padding: 22px 20px;
 
@@ -568,18 +720,6 @@
 
             .project:hover {
                 transform: none;
-            }
-
-            .project h3 {
-                font-size: 22px;
-            }
-
-            .note {
-                grid-template-columns: 1fr;
-
-                gap: 3px;
-
-                padding: 18px 20px;
             }
 
             footer {
@@ -612,8 +752,9 @@
 
             <nav aria-label="Main navigation">
                 <a href="/" class="active">Home</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
-                <a href="#notes">Notes</a>
                 <a href="#about">About</a>
             </nav>
 
@@ -632,29 +773,278 @@
             </p>
 
             <h1>
-                Hi, I'm Gage.
+                Gage Campbell
             </h1>
 
-            <p class="intro-text">
-                I work in IT and network operations. Most of my free time
-                ends up going toward servers, networking, or projects that
-                became much larger than originally planned.
+            <p class="role-title">
+                Network Operations · Infrastructure · Systems Support
             </p>
 
             <p class="intro-text">
-                This site is where I document what I'm building, what broke,
-                and what I learned fixing it.
+                I'm an IT professional with experience in network operations,
+                technical support leadership, and enterprise IT environments.
+                My background includes Tier 2 network troubleshooting, incident
+                response, identity and access management, and supporting the
+                systems people rely on every day.
             </p>
 
-            <div class="current">
+            <p class="intro-text">
+                Outside of work, I maintain a homelab where I work with
+                virtualization, Linux servers, Docker, pfSense, and network
+                segmentation.
+            </p>
+
+            <div class="intro-actions">
+
+                <a class="button" href="#experience">
+                    View Experience
+                </a>
+
+                <a class="button button-secondary" href="/resume.pdf">
+                    View Resume
+                </a>
+
+            </div>
+
+            <div class="career-focus">
 
                 <span>
-                    Currently working on
+                    Career Focus
                 </span>
 
                 <p>
-                    My homelab, a 1989 Toyota Supra, and an ongoing wearable
-                    electronics project.
+                    Infrastructure, network operations, systems administration,
+                    data center operations, and other hands-on technical roles.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section id="experience">
+
+            <div class="section-title">
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <h2>
+                    Experience
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+                My professional background combines network operations with
+                day-to-day technical leadership and enterprise IT support.
+            </p>
+
+
+            <article class="experience">
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <h3>
+                            IT Support Team Lead
+                        </h3>
+
+                        <p class="company">
+                            BHI
+                        </p>
+
+                    </div>
+
+                    <span class="experience-date">
+                        Mar 2025 – Present
+                    </span>
+
+                </div>
+
+                <ul>
+                    <li>
+                        Lead a four-person IT support team and coordinate daily
+                        workloads, escalations, and technical support operations.
+                    </li>
+
+                    <li>
+                        Administer user accounts and access through Active
+                        Directory, Google Workspace, and Microsoft 365.
+                    </li>
+
+                    <li>
+                        Support MFA, user provisioning, and identity and access
+                        management processes.
+                    </li>
+
+                    <li>
+                        Serve as an escalation point for hardware, software,
+                        network, and mobile device issues.
+                    </li>
+
+                    <li>
+                        Work with vendors and internal departments to resolve
+                        technical problems and maintain reliable IT operations.
+                    </li>
+
+                </ul>
+
+            </article>
+
+
+            <article class="experience">
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <h3>
+                            NOC Technician
+                        </h3>
+
+                        <p class="company">
+                            Strata Networks
+                        </p>
+
+                    </div>
+
+                    <span class="experience-date">
+                        Oct 2022 – Mar 2025
+                    </span>
+
+                </div>
+
+                <ul>
+                    <li>
+                        Monitored network infrastructure and responded to alarms
+                        affecting customer and enterprise services.
+                    </li>
+
+                    <li>
+                        Performed Tier 2 troubleshooting for connectivity,
+                        service outages, and network performance issues.
+                    </li>
+
+                    <li>
+                        Analyzed monitoring data to identify faults, trends, and
+                        service disruptions.
+                    </li>
+
+                    <li>
+                        Coordinated with field technicians and engineering teams
+                        during outage response and service restoration.
+                    </li>
+
+                    <li>
+                        Documented incidents, troubleshooting steps, and
+                        resolutions for operational continuity.
+                    </li>
+
+                </ul>
+
+            </article>
+
+        </section>
+
+
+        <section id="skills">
+
+            <div class="section-title">
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <h2>
+                    Technical Background
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+                Technologies and areas I have worked with professionally or
+                through hands-on lab environments.
+            </p>
+
+
+            <div class="skill-grid">
+
+
+                <div class="skill-group">
+
+                    <h3>
+                        Networking
+                    </h3>
+
+                    <p>
+                        TCP/IP, DNS, DHCP, VLANs, network troubleshooting,
+                        pfSense, firewall policies, Meraki, and Cisco
+                        fundamentals.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <h3>
+                        Systems &amp; Infrastructure
+                    </h3>
+
+                    <p>
+                        Ubuntu Server, Linux, Proxmox, virtualization, Docker,
+                        self-hosted services, server administration, and
+                        infrastructure troubleshooting.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <h3>
+                        Identity &amp; Administration
+                    </h3>
+
+                    <p>
+                        Active Directory, Microsoft 365, Google Workspace,
+                        MFA, user provisioning, and identity and access
+                        management.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <h3>
+                        Operations
+                    </h3>
+
+                    <p>
+                        Tier 1 and Tier 2 support, incident response, technical
+                        escalation, network monitoring, outage coordination,
+                        and technical documentation.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="certifications">
+
+                <h3>
+                    Certifications &amp; Recognition
+                </h3>
+
+                <p>
+                    CompTIA A+ · CompTIA Network+ · SkillsUSA Utah Gold Medalist
+                    in Cyber Security and Information Technology
                 </p>
 
             </div>
@@ -667,14 +1057,19 @@
             <div class="section-title">
 
                 <span class="section-number">
-                    01
+                    03
                 </span>
 
                 <h2>
-                    Projects
+                    Selected Projects
                 </h2>
 
             </div>
+
+            <p class="section-description">
+                I use my lab to get hands-on experience with infrastructure
+                outside of my day-to-day work.
+            </p>
 
 
             <article class="project">
@@ -686,13 +1081,14 @@
                 </h3>
 
                 <p>
-                    My home network, firewall, VLAN layout, and the ongoing
-                    process of rebuilding network infrastructure without
-                    taking everything offline.
+                    An ongoing rebuild of my home network using pfSense for
+                    routing and firewall management. The environment includes
+                    network segmentation, VLANs, DHCP, DNS, and isolated
+                    infrastructure and service networks.
                 </p>
 
                 <p class="tags">
-                    pfSense / VLANs / DHCP / DNS
+                    pfSense / VLANs / Firewall / DNS / DHCP
                 </p>
 
                 <a
@@ -708,25 +1104,25 @@
             <article class="project">
 
                 <h3>
-                    <a href="/projects/minecraft-server.html">
-                        Crimson Complex Server
+                    <a href="/projects/infrastructure.html">
+                        HomeSynthLab Infrastructure
                     </a>
                 </h3>
 
                 <p>
-                    A heavily modded Minecraft server hosted with Docker.
-                    The project has involved Linux administration, networking,
-                    performance troubleshooting, and tracking down broken or
-                    badly behaving mods.
+                    My personal server environment built around Proxmox and
+                    Ubuntu Server. I use the lab for virtualization, Linux
+                    administration, networking, Docker, and testing
+                    self-hosted services.
                 </p>
 
                 <p class="tags">
-                    Docker / Linux / NeoForge / Server Administration
+                    Proxmox / Ubuntu Server / Linux / Virtualization
                 </p>
 
                 <a
                     class="project-link"
-                    href="/projects/minecraft-server.html"
+                    href="/projects/infrastructure.html"
                 >
                     View project
                 </a>
@@ -737,161 +1133,69 @@
             <article class="project">
 
                 <h3>
-                    <a href="/projects/supra.html">
-                        1989 Toyota Supra
+                    <a href="/projects/server-infrastructure.html">
+                        Docker and Server Infrastructure
                     </a>
                 </h3>
 
                 <p>
-                    I bought a non-running MK3 Supra that had been sitting
-                    for roughly six years. I'm currently disassembling the
-                    engine bay and working toward diagnosing the engine.
+                    A collection of containerized services and hosted server
+                    environments used to experiment with service deployment,
+                    persistent storage, networking, performance troubleshooting,
+                    and ongoing administration.
                 </p>
 
                 <p class="tags">
-                    Restoration / Diagnostics / Mechanical
+                    Docker / Linux / Networking / Server Administration
                 </p>
 
                 <a
                     class="project-link"
-                    href="/projects/supra.html"
+                    href="/projects/server-infrastructure.html"
                 >
                     View project
                 </a>
 
             </article>
-
-
-            <article class="project">
-
-                <h3>
-                    <a href="/projects/wearable-electronics.html">
-                        Wearable Electronics
-                    </a>
-                </h3>
-
-                <p>
-                    An ongoing wearable project focused on active cooling,
-                    visibility, electronic components, and making the internal
-                    systems easier to access and repair.
-                </p>
-
-                <p class="tags">
-                    Electronics / Cooling / Fabrication / Prototyping
-                </p>
-
-                <a
-                    class="project-link"
-                    href="/projects/wearable-electronics.html"
-                >
-                    View project
-                </a>
-
-            </article>
-
-        </section>
-
-
-        <section id="notes">
-
-            <div class="section-title">
-
-                <span class="section-number">
-                    02
-                </span>
-
-                <h2>
-                    Notes
-                </h2>
-
-            </div>
-
-            <p class="section-description">
-                Short writeups from problems I've run into, changes I've made,
-                and things worth documenting before I forget them.
-            </p>
-
-
-            <div class="notes">
-
-                <a
-                    class="note"
-                    href="/notes/gigabit-speed-troubleshooting.html"
-                >
-
-                    <time datetime="2026-07">
-                        Jul 2026
-                    </time>
-
-                    <span>
-                        Troubleshooting a sudden drop from gigabit speeds
-                    </span>
-
-                </a>
-
-
-                <a
-                    class="note"
-                    href="/notes/pfsense-segmentation.html"
-                >
-
-                    <time datetime="2026-06">
-                        Jun 2026
-                    </time>
-
-                    <span>
-                        Rebuilding my network around pfSense and VLANs
-                    </span>
-
-                </a>
-
-
-                <a
-                    class="note"
-                    href="/notes/minecraft-server-performance.html"
-                >
-
-                    <time datetime="2026-06">
-                        Jun 2026
-                    </time>
-
-                    <span>
-                        Tracking down modded Minecraft server performance issues
-                    </span>
-
-                </a>
-
-            </div>
 
         </section>
 
 
         <section
             id="about"
-            class="about-preview"
+            class="about-content"
         >
 
             <div class="section-title">
 
                 <span class="section-number">
-                    03
+                    04
                 </span>
 
                 <h2>
-                    A little about me
+                    About Me
                 </h2>
 
             </div>
 
             <p>
-                I'm Gage Campbell. My background is in IT support and network
-                operations, with most of my interests leaning toward networking,
-                infrastructure, servers, and hands-on technical work.
+                I'm Gage Campbell. I started in network operations and later
+                moved into IT support leadership. Through both roles, I found
+                that the work I enjoy most is closer to the infrastructure:
+                networks, servers, systems, and troubleshooting problems that
+                require digging past the obvious answer.
             </p>
 
             <p>
-                Outside of work, I tend to learn by building something first
-                and figuring out the problems as they happen.
+                I tend to learn best by building things myself. My homelab has
+                become the place where I test network changes, deploy Linux
+                servers, work with containers, and learn technologies that I
+                want more exposure to professionally.
+            </p>
+
+            <p>
+                I'm continuing to build toward infrastructure, networking,
+                systems administration, and data center work.
             </p>
 
         </section>
