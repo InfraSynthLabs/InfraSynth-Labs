@@ -11,10 +11,11 @@
 
     <meta
         name="description"
-        content="Gage Campbell is an IT and network infrastructure professional with experience in network operations, technical support leadership, systems administration, and infrastructure troubleshooting."
+        content="Gage Campbell is an IT and infrastructure professional with experience in network operations, data center monitoring, Tier 2 troubleshooting, and technical support leadership."
     >
 
-    <title>Gage Campbell | IT & Network Infrastructure</title>
+    <title>Gage Campbell | Network & Infrastructure Operations</title>
+
 
     <style>
 
@@ -34,7 +35,7 @@
             --border-dark: #aeb8c1;
 
             --accent: #9e2732;
-            --accent-dark: #781d26;
+            --accent-dark: #751d25;
 
             --link: #284f70;
             --link-hover: #18384f;
@@ -62,7 +63,6 @@
             color: var(--text);
 
             font-family:
-                Inter,
                 -apple-system,
                 BlinkMacSystemFont,
                 "Segoe UI",
@@ -160,7 +160,7 @@
             display: flex;
             align-items: center;
 
-            gap: 26px;
+            gap: 24px;
         }
 
         nav a {
@@ -176,10 +176,7 @@
             text-decoration: none;
         }
 
-        nav a:hover {
-            color: #ffffff;
-        }
-
+        nav a:hover,
         nav a.active {
             color: #ffffff;
         }
@@ -264,7 +261,7 @@
         }
 
         .intro-text {
-            max-width: 790px;
+            max-width: 830px;
 
             margin: 0 0 16px;
 
@@ -317,7 +314,7 @@
         }
 
         .career-summary {
-            max-width: 790px;
+            max-width: 830px;
 
             margin-top: 34px;
             padding: 18px 20px;
@@ -387,7 +384,7 @@
         }
 
         .section-heading p {
-            max-width: 720px;
+            max-width: 780px;
 
             margin: 8px 0 0;
 
@@ -396,11 +393,70 @@
 
 
         /* ==================================================
+           INFRASTRUCTURE FOCUS
+        ================================================== */
+
+        .focus-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 18px;
+
+            max-width: 930px;
+        }
+
+        .focus-item {
+            padding: 24px;
+
+            background: var(--surface-strong);
+
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--header);
+        }
+
+        .focus-label {
+            margin: 0 0 10px;
+
+            color: var(--accent);
+
+            font-family:
+                "Courier New",
+                Courier,
+                monospace;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .focus-item h3 {
+            margin: 0 0 10px;
+
+            color: var(--text);
+
+            font-size: 19px;
+        }
+
+        .focus-item p {
+            margin: 0;
+
+            color: var(--secondary);
+
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+
+        /* ==================================================
            EXPERIENCE
         ================================================== */
 
         .experience-list {
-            max-width: 870px;
+            max-width: 900px;
         }
 
         .experience {
@@ -469,7 +525,7 @@
         }
 
         .experience ul {
-            max-width: 770px;
+            max-width: 800px;
 
             margin: 0;
             padding-left: 20px;
@@ -502,7 +558,7 @@
 
             gap: 18px;
 
-            max-width: 870px;
+            max-width: 900px;
         }
 
         .skill-group {
@@ -548,7 +604,7 @@
         }
 
         .certifications {
-            max-width: 870px;
+            max-width: 900px;
 
             margin-top: 18px;
             padding: 22px 24px;
@@ -578,7 +634,7 @@
         ================================================== */
 
         .project-list {
-            max-width: 870px;
+            max-width: 900px;
 
             border-top: 1px solid var(--border-dark);
         }
@@ -607,7 +663,7 @@
         }
 
         .project p {
-            max-width: 760px;
+            max-width: 790px;
 
             margin: 0 0 13px;
 
@@ -652,7 +708,7 @@
         ================================================== */
 
         .about-content {
-            max-width: 800px;
+            max-width: 820px;
         }
 
         .about-content p {
@@ -707,6 +763,15 @@
         /* ==================================================
            MOBILE
         ================================================== */
+
+        @media (max-width: 800px) {
+
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
 
         @media (max-width: 720px) {
 
@@ -834,6 +899,10 @@
                     Home
                 </a>
 
+                <a href="#focus">
+                    Infrastructure
+                </a>
+
                 <a href="#experience">
                     Experience
                 </a>
@@ -863,7 +932,7 @@
         <section class="intro">
 
             <p class="intro-label">
-                Network Operations / IT Infrastructure
+                Network Operations / Data Center Infrastructure
             </p>
 
 
@@ -873,23 +942,23 @@
 
 
             <p class="role-title">
-                Network Operations · Infrastructure · Systems Support
+                Network Operations · Data Center Operations · IT Infrastructure
             </p>
 
 
             <p class="intro-text">
-                I'm an IT professional with experience in network operations,
-                enterprise technical support, and IT team leadership.
-                My background includes Tier 2 network troubleshooting,
-                incident response, identity and access administration,
-                and supporting business-critical technology.
+                I'm an IT and infrastructure professional with experience in
+                network operations, data center monitoring, enterprise
+                technical support, and IT team leadership.
             </p>
 
 
             <p class="intro-text">
-                My primary interests are network infrastructure, servers,
-                systems administration, data center operations, and
-                hands-on technical environments.
+                My background includes monitoring ISP and infrastructure
+                environments, responding to service-impacting alarms,
+                tracking environmental conditions, performing Tier 2 network
+                troubleshooting, and coordinating incident response and
+                service restoration.
             </p>
 
 
@@ -919,10 +988,100 @@
                 </strong>
 
                 <p>
-                    Network infrastructure, NOC operations, systems
-                    administration, data center operations, and technical
-                    infrastructure roles.
+                    Data center operations, network infrastructure, NOC
+                    operations, systems administration, and hands-on
+                    infrastructure support.
                 </p>
+
+            </div>
+
+        </section>
+
+
+        <section id="focus">
+
+            <div class="section-header">
+
+                <span class="section-index">
+                    01 /
+                </span>
+
+                <div class="section-heading">
+
+                    <h2>
+                        Infrastructure Operations
+                    </h2>
+
+                    <p>
+                        My background sits between network operations, technical
+                        infrastructure, and enterprise IT support.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="focus-grid">
+
+
+                <article class="focus-item">
+
+                    <p class="focus-label">
+                        DC / OPS
+                    </p>
+
+                    <h3>
+                        Data Center Monitoring
+                    </h3>
+
+                    <p>
+                        Experience monitoring infrastructure alarms,
+                        environmental temperatures, equipment conditions,
+                        and other facility-related alerts in an ISP
+                        operations environment.
+                    </p>
+
+                </article>
+
+
+                <article class="focus-item">
+
+                    <p class="focus-label">
+                        NOC / L2
+                    </p>
+
+                    <h3>
+                        Network Operations
+                    </h3>
+
+                    <p>
+                        Tier 2 troubleshooting, network monitoring,
+                        service-impacting alarm response, incident escalation,
+                        outage coordination, and service restoration.
+                    </p>
+
+                </article>
+
+
+                <article class="focus-item">
+
+                    <p class="focus-label">
+                        SYS / LAB
+                    </p>
+
+                    <h3>
+                        Systems Infrastructure
+                    </h3>
+
+                    <p>
+                        Hands-on work with Linux servers, virtualization,
+                        Docker, pfSense, network segmentation, and
+                        self-hosted infrastructure through my homelab.
+                    </p>
+
+                </article>
+
 
             </div>
 
@@ -934,7 +1093,7 @@
             <div class="section-header">
 
                 <span class="section-index">
-                    01 /
+                    02 /
                 </span>
 
                 <div class="section-heading">
@@ -944,9 +1103,9 @@
                     </h2>
 
                     <p>
-                        Experience supporting enterprise IT environments,
-                        network operations, incident response, and technical
-                        support teams.
+                        Experience supporting ISP infrastructure, network
+                        operations, incident response, and enterprise IT
+                        environments.
                     </p>
 
                 </div>
@@ -989,9 +1148,9 @@
                         <ul>
 
                             <li>
-                                Lead a four-person IT support team and coordinate
-                                daily workloads, escalations, and technical
-                                support operations.
+                                Lead a four-person IT support team and
+                                coordinate daily workloads, escalations,
+                                and technical support operations.
                             </li>
 
                             <li>
@@ -1007,13 +1166,13 @@
 
                             <li>
                                 Serve as an escalation point for hardware,
-                                software, networking, and mobile device issues.
+                                software, network, and mobile device issues.
                             </li>
 
                             <li>
-                                Coordinate with vendors and internal departments
-                                to maintain reliable business technology
-                                operations.
+                                Coordinate with vendors and internal
+                                departments to maintain reliable business
+                                technology operations.
                             </li>
 
                         </ul>
@@ -1032,11 +1191,11 @@
                             <div>
 
                                 <h3>
-                                    NOC Technician
+                                    L2 NOC Technician
                                 </h3>
 
                                 <p class="company">
-                                    Strata Networks
+                                    Strata Networks · Network &amp; Infrastructure Operations
                                 </p>
 
                             </div>
@@ -1055,31 +1214,53 @@
                         <ul>
 
                             <li>
-                                Monitored network infrastructure and responded
-                                to service-impacting alarms affecting customer
-                                and enterprise services.
+                                Monitored ISP network and infrastructure
+                                environments for service-impacting alarms,
+                                equipment faults, and abnormal operating
+                                conditions.
                             </li>
 
                             <li>
-                                Performed Tier 2 troubleshooting and diagnostics
-                                for connectivity, service outages, and network
-                                performance issues.
+                                Monitored data center and infrastructure
+                                conditions, including environmental
+                                temperatures and facility-related alerts.
                             </li>
 
                             <li>
-                                Analyzed network monitoring data to identify
-                                faults, trends, and service disruptions.
+                                Investigated alarms and monitoring data to
+                                identify network, equipment, environmental,
+                                and service-related issues.
+                            </li>
+
+                            <li>
+                                Performed Tier 2 troubleshooting and
+                                diagnostics for connectivity problems,
+                                service outages, and network performance
+                                issues.
+                            </li>
+
+                            <li>
+                                Analyzed monitoring information to identify
+                                faults, trends, service disruptions, and
+                                potential infrastructure issues.
                             </li>
 
                             <li>
                                 Coordinated with field technicians and
-                                engineering teams during outage response and
-                                service restoration.
+                                engineering teams during outage response,
+                                infrastructure incidents, and service
+                                restoration.
                             </li>
 
                             <li>
-                                Documented incidents, troubleshooting procedures,
-                                and technical resolutions.
+                                Escalated abnormal infrastructure and
+                                environmental conditions based on operational
+                                procedures and service impact.
+                            </li>
+
+                            <li>
+                                Documented incidents, troubleshooting actions,
+                                escalation details, and technical resolutions.
                             </li>
 
                         </ul>
@@ -1099,7 +1280,7 @@
             <div class="section-header">
 
                 <span class="section-index">
-                    02 /
+                    03 /
                 </span>
 
                 <div class="section-heading">
@@ -1110,7 +1291,8 @@
 
                     <p>
                         Technologies and operational areas I have worked with
-                        professionally or through hands-on lab environments.
+                        professionally or through hands-on infrastructure
+                        environments.
                     </p>
 
                 </div>
@@ -1124,7 +1306,48 @@
                 <article class="skill-group">
 
                     <p class="skill-label">
-                        NET / 01
+                        DC / 01
+                    </p>
+
+                    <h3>
+                        Data Center Operations
+                    </h3>
+
+                    <p>
+                        Infrastructure alarm monitoring, environmental
+                        temperature monitoring, facility-related alerts,
+                        abnormal condition escalation, operational
+                        documentation, and infrastructure condition
+                        monitoring.
+                    </p>
+
+                </article>
+
+
+                <article class="skill-group">
+
+                    <p class="skill-label">
+                        NOC / 02
+                    </p>
+
+                    <h3>
+                        Network Operations
+                    </h3>
+
+                    <p>
+                        Network monitoring, service-impacting alarm response,
+                        Tier 2 troubleshooting, outage coordination, service
+                        restoration, escalation management, and incident
+                        documentation.
+                    </p>
+
+                </article>
+
+
+                <article class="skill-group">
+
+                    <p class="skill-label">
+                        NET / 03
                     </p>
 
                     <h3>
@@ -1143,7 +1366,7 @@
                 <article class="skill-group">
 
                     <p class="skill-label">
-                        SYS / 02
+                        SYS / 04
                     </p>
 
                     <h3>
@@ -1162,7 +1385,7 @@
                 <article class="skill-group">
 
                     <p class="skill-label">
-                        IAM / 03
+                        IAM / 05
                     </p>
 
                     <h3>
@@ -1181,17 +1404,18 @@
                 <article class="skill-group">
 
                     <p class="skill-label">
-                        OPS / 04
+                        OPS / 06
                     </p>
 
                     <h3>
-                        Technical Operations
+                        Incident &amp; Technical Operations
                     </h3>
 
                     <p>
-                        Tier 1 and Tier 2 support, incident response,
-                        escalation management, network monitoring, outage
-                        coordination, and technical documentation.
+                        Incident response, technical escalation,
+                        infrastructure monitoring, outage coordination,
+                        troubleshooting documentation, and cross-team
+                        communication.
                     </p>
 
                 </article>
@@ -1221,7 +1445,7 @@
             <div class="section-header">
 
                 <span class="section-index">
-                    03 /
+                    04 /
                 </span>
 
                 <div class="section-heading">
@@ -1231,8 +1455,8 @@
                     </h2>
 
                     <p>
-                        Hands-on projects used to build practical experience
-                        with networking, servers, virtualization, and Linux
+                        Hands-on projects used to expand my experience with
+                        networking, servers, virtualization, and Linux
                         infrastructure.
                     </p>
 
@@ -1313,7 +1537,8 @@
                     <p>
                         Containerized server environments used to work with
                         service deployment, persistent storage, networking,
-                        system performance, and ongoing server administration.
+                        performance troubleshooting, and ongoing server
+                        administration.
                     </p>
 
                     <p class="tags">
@@ -1340,7 +1565,7 @@
             <div class="section-header">
 
                 <span class="section-index">
-                    04 /
+                    05 /
                 </span>
 
                 <div class="section-heading">
@@ -1357,28 +1582,37 @@
             <div class="about-content">
 
                 <p>
-                    I started my career in network operations, where I worked
-                    with monitoring, service-impacting incidents, Tier 2
-                    troubleshooting, and outage response.
+                    I began my IT career in network operations as an L2 NOC
+                    Technician for an ISP. My work involved monitoring network
+                    and infrastructure environments and responding to
+                    service-impacting events.
                 </p>
 
                 <p>
-                    I later moved into IT support leadership, taking on team
-                    coordination, escalation management, identity
-                    administration, and broader enterprise IT support.
+                    I monitored infrastructure alarms, tracked environmental
+                    conditions such as data center temperatures, investigated
+                    network and service issues, and coordinated escalation and
+                    restoration efforts with field technicians and engineering
+                    teams.
                 </p>
 
                 <p>
-                    The part of technology I enjoy most is infrastructure.
-                    I prefer working with networks, servers, systems, and
-                    technical problems that require investigation rather than
-                    simply following a script.
+                    I later moved into IT support leadership, expanding into
+                    team coordination, escalation management, identity
+                    administration, and broader enterprise technology support.
                 </p>
 
                 <p>
-                    I'm continuing to build my career toward network
-                    infrastructure, systems administration, and data center
-                    operations.
+                    The work I enjoy most is infrastructure-focused. I prefer
+                    networks, servers, data center environments, and technical
+                    problems that require investigation, monitoring, and
+                    hands-on troubleshooting.
+                </p>
+
+                <p>
+                    My career focus is continuing deeper into data center
+                    operations, network infrastructure, systems administration,
+                    and technical infrastructure roles.
                 </p>
 
             </div>
