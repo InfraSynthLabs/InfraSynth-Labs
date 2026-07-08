@@ -7,35 +7,28 @@
 
     <meta
         name="description"
-        content="InfraSynth Labs is the personal technical portfolio of Synthicate, documenting networking, infrastructure, self-hosting, and other ongoing projects."
+        content="The technical portfolio of Gage Campbell, documenting networking, infrastructure, servers, and ongoing projects."
     >
 
-    <title>InfraSynth Labs</title>
+    <title>Gage Campbell | InfraSynth Labs</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header class="site-header">
-        <div class="container header-inner">
+    <header>
+        <div class="header-content">
 
-            <a href="/" class="site-name">
+            <a class="logo" href="/">
                 InfraSynth Labs
             </a>
 
-            <nav class="site-nav" aria-label="Main navigation">
+            <nav aria-label="Main navigation">
                 <a href="/" class="active">Home</a>
                 <a href="/projects/">Projects</a>
                 <a href="/notes/">Notes</a>
                 <a href="/about/">About</a>
-                <a
-                    href="https://github.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    GitHub
-                </a>
             </nav>
 
         </div>
@@ -45,253 +38,237 @@
     <main>
 
         <section class="intro">
-            <div class="container">
 
-                <h1>Hi, I'm Synthicate.</h1>
+            <p class="eyebrow">
+                IT &amp; Network Infrastructure
+            </p>
 
-                <p class="intro-lead">
-                    I work in IT and network operations. In my free time,
-                    I usually end up building servers, changing my network,
-                    or starting projects significantly larger than I planned.
-                </p>
+            <h1>Hi, I'm Gage.</h1>
+
+            <p class="intro-text">
+                I work in IT and network operations. Most of my free time
+                ends up going toward servers, networking, or projects that
+                became much larger than originally planned.
+            </p>
+
+            <p class="intro-text">
+                This site is where I document what I'm building, what broke,
+                and what I learned fixing it.
+            </p>
+
+            <div class="current">
+                <span>Currently working on</span>
 
                 <p>
-                    This site is where I document them.
+                    My homelab, a 1989 Toyota Supra, and an ongoing wearable
+                    electronics project.
+                </p>
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <div class="section-title">
+                <span>01</span>
+                <h2>Projects</h2>
+            </div>
+
+
+            <article>
+
+                <h3>
+                    <a href="/projects/homelab.html">
+                        Home Network and pfSense
+                    </a>
+                </h3>
+
+                <p>
+                    My home network, firewall, VLAN layout, and the ongoing
+                    process of rebuilding network infrastructure without
+                    taking everything offline.
                 </p>
 
-                <div class="current-work">
-                    <span class="section-label">Currently</span>
+                <p class="tags">
+                    pfSense / VLANs / DHCP / DNS
+                </p>
 
-                    <p>
-                        Working on my homelab, rebuilding a 1989 Toyota Supra,
-                        and improving a wearable electronics project.
-                    </p>
-                </div>
+                <a class="project-link" href="/projects/homelab.html">
+                    View project
+                </a>
 
-            </div>
+            </article>
+
+
+            <article>
+
+                <h3>
+                    <a href="/projects/minecraft-server.html">
+                        Crimson Complex Server
+                    </a>
+                </h3>
+
+                <p>
+                    A heavily modded Minecraft server hosted with Docker.
+                    The project has involved Linux administration, networking,
+                    performance troubleshooting, and tracking down broken or
+                    badly behaving mods.
+                </p>
+
+                <p class="tags">
+                    Docker / Linux / NeoForge / Server Administration
+                </p>
+
+                <a
+                    class="project-link"
+                    href="/projects/minecraft-server.html"
+                >
+                    View project
+                </a>
+
+            </article>
+
+
+            <article>
+
+                <h3>
+                    <a href="/projects/supra.html">
+                        1989 Toyota Supra
+                    </a>
+                </h3>
+
+                <p>
+                    I bought a non-running MK3 Supra that had been sitting
+                    for roughly six years. I'm currently disassembling the
+                    engine bay and working toward diagnosing the engine.
+                </p>
+
+                <p class="tags">
+                    Restoration / Diagnostics / Mechanical
+                </p>
+
+                <a class="project-link" href="/projects/supra.html">
+                    View project
+                </a>
+
+            </article>
+
+
+            <article>
+
+                <h3>
+                    <a href="/projects/wearable-electronics.html">
+                        Wearable Electronics
+                    </a>
+                </h3>
+
+                <p>
+                    An ongoing wearable project focused on active cooling,
+                    visibility, electronic components, and making the internal
+                    systems easier to access and repair.
+                </p>
+
+                <p class="tags">
+                    Electronics / Cooling / Fabrication / Prototyping
+                </p>
+
+                <a
+                    class="project-link"
+                    href="/projects/wearable-electronics.html"
+                >
+                    View project
+                </a>
+
+            </article>
+
         </section>
 
 
-        <section class="section">
-            <div class="container">
+        <section>
 
-                <div class="section-heading">
-                    <span class="section-number">01 /</span>
-                    <h2>Recent Projects</h2>
-                </div>
-
-
-                <article class="project-entry">
-
-                    <h3>
-                        <a href="/projects/homelab.html">
-                            pfSense Homelab
-                        </a>
-                    </h3>
-
-                    <p>
-                        My home network, VLAN layout, firewall rules, and the
-                        troubleshooting that comes with rebuilding a network
-                        while actively using it.
-                    </p>
-
-                    <div class="project-meta">
-                        pfSense · VLANs · DHCP · DNS
-                    </div>
-
-                    <a href="/projects/homelab.html" class="text-link">
-                        View project →
-                    </a>
-
-                </article>
-
-
-                <article class="project-entry">
-
-                    <h3>
-                        <a href="/projects/minecraft-server.html">
-                            Crimson Complex Server
-                        </a>
-                    </h3>
-
-                    <p>
-                        A heavily modified Minecraft server running through
-                        Docker. Mostly an ongoing lesson in Linux, containers,
-                        networking, and finding out what destroys server
-                        performance.
-                    </p>
-
-                    <div class="project-meta">
-                        Docker · Linux · NeoForge · Server Administration
-                    </div>
-
-                    <a
-                        href="/projects/minecraft-server.html"
-                        class="text-link"
-                    >
-                        View project →
-                    </a>
-
-                </article>
-
-
-                <article class="project-entry">
-
-                    <h3>
-                        <a href="/projects/supra.html">
-                            1989 Toyota Supra
-                        </a>
-                    </h3>
-
-                    <p>
-                        I bought a non-running MK3 Supra that had been sitting
-                        for around six years. The current goal is to diagnose
-                        the engine, rebuild what is needed, and eventually
-                        return the car to regular use.
-                    </p>
-
-                    <div class="project-meta">
-                        Restoration · Diagnostics · Mechanical
-                    </div>
-
-                    <a href="/projects/supra.html" class="text-link">
-                        View project →
-                    </a>
-
-                </article>
-
-
-                <article class="project-entry">
-
-                    <h3>
-                        <a href="/projects/wearable-electronics.html">
-                            Wearable Electronics
-                        </a>
-                    </h3>
-
-                    <p>
-                        An ongoing wearable project involving internal cooling,
-                        visibility improvements, electronic facial components,
-                        and making the internal systems easier to maintain.
-                    </p>
-
-                    <div class="project-meta">
-                        Electronics · Cooling · Fabrication · Prototyping
-                    </div>
-
-                    <a
-                        href="/projects/wearable-electronics.html"
-                        class="text-link"
-                    >
-                        View project →
-                    </a>
-
-                </article>
-
+            <div class="section-title">
+                <span>02</span>
+                <h2>Notes</h2>
             </div>
-        </section>
 
+            <p class="section-description">
+                Short writeups from problems I've run into, changes I've made,
+                and things worth documenting before I forget them.
+            </p>
 
-        <section class="section">
-            <div class="container">
+            <div class="notes">
 
-                <div class="section-heading">
-                    <span class="section-number">02 /</span>
-                    <h2>Recent Notes</h2>
-                </div>
+                <a href="/notes/gigabit-speed-troubleshooting.html">
+                    <time datetime="2026-07">Jul 2026</time>
 
-                <div class="notes-list">
+                    <span>
+                        Troubleshooting a sudden drop from gigabit speeds
+                    </span>
+                </a>
 
-                    <a
-                        href="/notes/gigabit-speed-troubleshooting.html"
-                        class="note-entry"
-                    >
-                        <span class="note-date">July 2026</span>
+                <a href="/notes/pfsense-segmentation.html">
+                    <time datetime="2026-06">Jun 2026</time>
 
-                        <span class="note-title">
-                            Troubleshooting a sudden drop from gigabit speeds
-                        </span>
-                    </a>
+                    <span>
+                        Rebuilding my network around pfSense and VLANs
+                    </span>
+                </a>
 
+                <a href="/notes/minecraft-server-performance.html">
+                    <time datetime="2026-06">Jun 2026</time>
 
-                    <a
-                        href="/notes/pfsense-segmentation.html"
-                        class="note-entry"
-                    >
-                        <span class="note-date">June 2026</span>
-
-                        <span class="note-title">
-                            Rebuilding my network around pfSense and VLANs
-                        </span>
-                    </a>
-
-
-                    <a
-                        href="/notes/minecraft-server-performance.html"
-                        class="note-entry"
-                    >
-                        <span class="note-date">June 2026</span>
-
-                        <span class="note-title">
-                            Tracking down performance problems on a modded server
-                        </span>
-                    </a>
-
-                </div>
-
-                <a href="/notes/" class="text-link section-link">
-                    View all notes →
+                    <span>
+                        Tracking down modded Minecraft server performance issues
+                    </span>
                 </a>
 
             </div>
+
+            <a class="project-link" href="/notes/">
+                View all notes
+            </a>
+
         </section>
 
 
-        <section class="section about-preview">
-            <div class="container">
+        <section class="about-preview">
 
-                <div class="section-heading">
-                    <span class="section-number">03 /</span>
-                    <h2>About This Site</h2>
-                </div>
-
-                <p>
-                    InfraSynth Labs is my place to keep track of the things I
-                    build and what I learn while working on them.
-                </p>
-
-                <p>
-                    Most of the site will probably revolve around networking,
-                    servers, infrastructure, and troubleshooting. Some projects
-                    will have almost nothing to do with IT.
-                </p>
-
-                <p>
-                    I'm fine with that.
-                </p>
-
-                <a href="/about/" class="text-link">
-                    More about me →
-                </a>
-
+            <div class="section-title">
+                <span>03</span>
+                <h2>A little about me</h2>
             </div>
+
+            <p>
+                I'm Gage Campbell. My background is in IT support and network
+                operations, with most of my interests leaning toward networking,
+                infrastructure, servers, and hands-on technical work.
+            </p>
+
+            <p>
+                Outside of work, I tend to learn by building something first
+                and figuring out the problems as they happen.
+            </p>
+
+            <a class="project-link" href="/about/">
+                More about me
+            </a>
+
         </section>
 
     </main>
 
 
-    <footer class="site-footer">
-        <div class="container footer-inner">
+    <footer>
 
-            <p>
-                © 2026 InfraSynth Labs
-            </p>
+        <p>
+            © 2026 Gage Campbell
+        </p>
 
-            <p>
-                Built by Synthicate.
-            </p>
+        <p>
+            InfraSynth Labs
+        </p>
 
-        </div>
     </footer>
 
 </body>
