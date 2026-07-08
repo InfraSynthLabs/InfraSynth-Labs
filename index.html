@@ -16,31 +16,36 @@
 
     <title>Gage Campbell | IT & Network Infrastructure</title>
 
-
     <style>
 
         :root {
-            --background: #f4f2f0;
-            --surface: #ffffff;
-            --surface-alt: #ebe7e4;
+            --page: #e9edf1;
+            --surface: #f8fafc;
+            --surface-strong: #ffffff;
 
-            --text: #1c1c1f;
-            --secondary-text: #454549;
-            --muted: #68686e;
+            --header: #18212b;
+            --header-secondary: #222e3a;
 
-            --border: #d5d0cc;
+            --text: #17202a;
+            --secondary: #3f4b57;
+            --muted: #687581;
 
-            --red: #a71924;
-            --red-dark: #741119;
-            --red-light: #f5e5e7;
+            --border: #cbd3da;
+            --border-dark: #aeb8c1;
 
-            --content-width: 1080px;
+            --accent: #9e2732;
+            --accent-dark: #781d26;
+
+            --link: #284f70;
+            --link-hover: #18384f;
+
+            --content-width: 1060px;
         }
 
 
-        /* ----------------------------------------
-           GENERAL
-        ---------------------------------------- */
+        /* ==================================================
+           BASE
+        ================================================== */
 
         * {
             box-sizing: border-box;
@@ -53,10 +58,18 @@
         body {
             margin: 0;
 
-            background: var(--background);
+            background: var(--page);
             color: var(--text);
 
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                Helvetica,
+                sans-serif;
+
             font-size: 17px;
             line-height: 1.6;
 
@@ -68,25 +81,25 @@
         }
 
         ::selection {
-            background: var(--red);
-            color: white;
+            background: #cfd8e1;
+            color: var(--text);
         }
 
 
-        /* ----------------------------------------
+        /* ==================================================
            HEADER
-        ---------------------------------------- */
+        ================================================== */
 
         header {
-            background: var(--surface);
+            background: var(--header);
+            color: #ffffff;
 
-            border-top: 5px solid var(--red);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 3px solid var(--accent);
         }
 
         .header-content {
             width: min(92%, var(--content-width));
-            min-height: 76px;
+            min-height: 72px;
 
             margin: 0 auto;
 
@@ -94,56 +107,81 @@
             align-items: center;
             justify-content: space-between;
 
-            gap: 30px;
+            gap: 32px;
         }
 
-        .logo {
+        .brand {
             display: flex;
             align-items: center;
 
-            gap: 10px;
-
-            color: var(--text);
-
-            font-size: 21px;
-            font-weight: 700;
+            gap: 11px;
 
             text-decoration: none;
         }
 
-        .logo-mark {
-            width: 13px;
-            height: 13px;
+        .brand-mark {
+            width: 10px;
+            height: 28px;
 
-            background: var(--red);
+            background: var(--accent);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+
+            line-height: 1.15;
+        }
+
+        .brand-name {
+            color: #ffffff;
+
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .brand-subtitle {
+            margin-top: 3px;
+
+            color: #aeb9c4;
+
+            font-family:
+                "Courier New",
+                Courier,
+                monospace;
+
+            font-size: 11px;
+
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         nav {
             display: flex;
             align-items: center;
 
-            gap: 28px;
+            gap: 26px;
         }
 
         nav a {
             position: relative;
 
-            padding: 26px 0 24px;
+            padding: 24px 0;
 
-            color: var(--secondary-text);
+            color: #bdc7d0;
 
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
 
             text-decoration: none;
         }
 
         nav a:hover {
-            color: var(--red);
+            color: #ffffff;
         }
 
         nav a.active {
-            color: var(--red);
+            color: #ffffff;
         }
 
         nav a.active::after {
@@ -152,18 +190,18 @@
             position: absolute;
 
             right: 0;
-            bottom: -1px;
+            bottom: 0;
             left: 0;
 
             height: 3px;
 
-            background: var(--red);
+            background: var(--accent);
         }
 
 
-        /* ----------------------------------------
-           MAIN
-        ---------------------------------------- */
+        /* ==================================================
+           LAYOUT
+        ================================================== */
 
         main {
             width: min(92%, var(--content-width));
@@ -172,54 +210,57 @@
         }
 
         section {
-            padding: 64px 0;
+            padding: 62px 0;
 
             border-bottom: 1px solid var(--border);
         }
 
 
-        /* ----------------------------------------
+        /* ==================================================
            INTRO
-        ---------------------------------------- */
+        ================================================== */
 
         .intro {
-            padding-top: 78px;
-            padding-bottom: 72px;
+            padding-top: 72px;
+            padding-bottom: 66px;
         }
 
-        .eyebrow {
-            margin: 0 0 14px;
+        .intro-label {
+            margin: 0 0 12px;
 
-            color: var(--red);
+            color: var(--accent);
 
-            font-size: 14px;
+            font-family:
+                "Courier New",
+                Courier,
+                monospace;
+
+            font-size: 13px;
             font-weight: 700;
 
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
         }
 
         .intro h1 {
-            max-width: 800px;
-
-            margin: 0 0 12px;
+            margin: 0 0 8px;
 
             color: var(--text);
 
-            font-size: clamp(46px, 7vw, 72px);
+            font-size: clamp(46px, 7vw, 70px);
             font-weight: 700;
-            line-height: 1.05;
+            line-height: 1;
 
-            letter-spacing: -2px;
+            letter-spacing: -2.5px;
         }
 
         .role-title {
             margin: 0 0 28px;
 
-            color: var(--red);
+            color: var(--secondary);
 
             font-size: 22px;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .intro-text {
@@ -227,10 +268,10 @@
 
             margin: 0 0 16px;
 
-            color: var(--secondary-text);
+            color: var(--secondary);
 
-            font-size: 20px;
-            line-height: 1.55;
+            font-size: 19px;
+            line-height: 1.6;
         }
 
         .intro-actions {
@@ -239,225 +280,258 @@
 
             gap: 12px;
 
-            margin-top: 34px;
+            margin-top: 30px;
         }
 
         .button {
             display: inline-block;
 
-            padding: 11px 18px;
+            padding: 10px 17px;
 
-            background: var(--red);
+            background: var(--header);
 
-            border: 2px solid var(--red);
+            border: 1px solid var(--header);
 
-            color: white;
+            color: #ffffff;
 
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
 
             text-decoration: none;
         }
 
         .button:hover {
-            background: var(--red-dark);
-            border-color: var(--red-dark);
+            background: var(--header-secondary);
         }
 
         .button-secondary {
-            background: transparent;
+            background: var(--surface-strong);
 
-            color: var(--red);
+            border-color: var(--border-dark);
+
+            color: var(--text);
         }
 
         .button-secondary:hover {
-            background: var(--red-light);
-            border-color: var(--red);
-
-            color: var(--red-dark);
+            background: #f0f3f6;
         }
 
-        .career-focus {
+        .career-summary {
             max-width: 790px;
 
-            margin-top: 38px;
-            padding: 20px 22px;
+            margin-top: 34px;
+            padding: 18px 20px;
 
-            background: var(--red-light);
+            background: #dde3e8;
 
-            border: 1px solid #dfbfc3;
-            border-left: 5px solid var(--red);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
         }
 
-        .career-focus span {
+        .career-summary strong {
             display: block;
 
-            margin-bottom: 5px;
+            margin-bottom: 4px;
 
-            color: var(--red-dark);
+            color: var(--text);
 
             font-size: 14px;
-            font-weight: 700;
-
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
         }
 
-        .career-focus p {
+        .career-summary p {
             margin: 0;
 
-            color: var(--secondary-text);
+            color: var(--secondary);
 
-            font-size: 16px;
+            font-size: 15px;
         }
 
 
-        /* ----------------------------------------
+        /* ==================================================
            SECTION HEADINGS
-        ---------------------------------------- */
+        ================================================== */
 
-        .section-title {
-            display: flex;
-            align-items: center;
+        .section-header {
+            display: grid;
 
-            gap: 14px;
+            grid-template-columns: 52px minmax(0, 1fr);
+
+            gap: 16px;
 
             margin-bottom: 36px;
         }
 
-        .section-number {
-            width: 38px;
-            height: 38px;
+        .section-index {
+            padding-top: 5px;
 
-            flex: 0 0 38px;
+            color: var(--accent);
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-family:
+                "Courier New",
+                Courier,
+                monospace;
 
-            background: var(--red);
-
-            color: white;
-
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
         }
 
-        .section-title h2 {
+        .section-heading h2 {
             margin: 0;
 
             color: var(--text);
 
-            font-size: 31px;
+            font-size: 30px;
             line-height: 1.2;
 
             letter-spacing: -0.5px;
         }
 
-        .section-description {
-            max-width: 760px;
+        .section-heading p {
+            max-width: 720px;
 
-            margin: -14px 0 34px 52px;
+            margin: 8px 0 0;
 
             color: var(--muted);
         }
 
 
-        /* ----------------------------------------
+        /* ==================================================
            EXPERIENCE
-        ---------------------------------------- */
+        ================================================== */
+
+        .experience-list {
+            max-width: 870px;
+        }
 
         .experience {
-            max-width: 850px;
+            margin-bottom: 22px;
 
-            margin-bottom: 24px;
-            padding: 28px;
+            background: var(--surface-strong);
+
+            border: 1px solid var(--border);
+        }
+
+        .experience:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-top {
+            padding: 24px 26px 20px;
 
             background: var(--surface);
 
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--red);
+            border-bottom: 1px solid var(--border);
         }
 
-        .experience-header {
+        .experience-heading {
             display: flex;
-            justify-content: space-between;
             align-items: flex-start;
+            justify-content: space-between;
 
-            gap: 30px;
-
-            margin-bottom: 14px;
+            gap: 24px;
         }
 
         .experience h3 {
-            margin: 0 0 3px;
+            margin: 0 0 4px;
 
             color: var(--text);
 
-            font-size: 24px;
+            font-size: 23px;
             line-height: 1.3;
         }
 
         .company {
             margin: 0;
 
-            color: var(--red);
+            color: var(--link);
 
+            font-size: 15px;
             font-weight: 700;
         }
 
         .experience-date {
+            padding-top: 3px;
+
             color: var(--muted);
 
-            font-family: "Courier New", Courier, monospace;
-            font-size: 14px;
+            font-family:
+                "Courier New",
+                Courier,
+                monospace;
+
+            font-size: 13px;
 
             white-space: nowrap;
         }
 
+        .experience-body {
+            padding: 22px 26px 24px;
+        }
+
         .experience ul {
-            max-width: 760px;
+            max-width: 770px;
 
-            margin: 18px 0 0;
-            padding-left: 22px;
+            margin: 0;
+            padding-left: 20px;
 
-            color: var(--secondary-text);
+            color: var(--secondary);
         }
 
         .experience li {
             margin-bottom: 8px;
         }
 
+        .experience li:last-child {
+            margin-bottom: 0;
+        }
+
         .experience li::marker {
-            color: var(--red);
+            color: var(--accent);
         }
 
 
-        /* ----------------------------------------
+        /* ==================================================
            SKILLS
-        ---------------------------------------- */
+        ================================================== */
 
         .skill-grid {
             display: grid;
 
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
 
             gap: 18px;
 
-            max-width: 850px;
+            max-width: 870px;
         }
 
         .skill-group {
-            padding: 24px;
+            padding: 23px 24px;
 
-            background: var(--surface);
+            background: var(--surface-strong);
 
             border: 1px solid var(--border);
-            border-top: 4px solid var(--red);
+        }
+
+        .skill-label {
+            margin: 0 0 12px;
+
+            color: var(--accent);
+
+            font-family:
+                "Courier New",
+                Courier,
+                monospace;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .skill-group h3 {
-            margin: 0 0 14px;
+            margin: 0 0 10px;
 
             color: var(--text);
 
@@ -467,69 +541,60 @@
         .skill-group p {
             margin: 0;
 
-            color: var(--secondary-text);
+            color: var(--secondary);
 
-            line-height: 1.7;
+            font-size: 16px;
+            line-height: 1.65;
         }
 
         .certifications {
-            max-width: 850px;
+            max-width: 870px;
 
-            margin-top: 24px;
-            padding: 24px 26px;
+            margin-top: 18px;
+            padding: 22px 24px;
 
-            background: var(--red-light);
+            background: #dde3e8;
 
-            border: 1px solid #dfbfc3;
+            border: 1px solid var(--border);
         }
 
         .certifications h3 {
-            margin: 0 0 10px;
+            margin: 0 0 8px;
 
-            color: var(--red-dark);
+            color: var(--text);
 
-            font-size: 19px;
+            font-size: 18px;
         }
 
         .certifications p {
             margin: 0;
 
-            color: var(--secondary-text);
+            color: var(--secondary);
         }
 
 
-        /* ----------------------------------------
+        /* ==================================================
            PROJECTS
-        ---------------------------------------- */
+        ================================================== */
+
+        .project-list {
+            max-width: 870px;
+
+            border-top: 1px solid var(--border-dark);
+        }
 
         .project {
-            max-width: 850px;
+            padding: 26px 4px;
 
-            margin: 0 0 24px;
-            padding: 26px 28px;
-
-            background: var(--surface);
-
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--border);
-
-            transition:
-                border-color 0.15s ease,
-                transform 0.15s ease;
-        }
-
-        .project:hover {
-            border-left-color: var(--red);
-
-            transform: translateX(3px);
+            border-bottom: 1px solid var(--border-dark);
         }
 
         .project h3 {
-            margin: 0 0 10px;
+            margin: 0 0 8px;
 
             color: var(--text);
 
-            font-size: 24px;
+            font-size: 23px;
             line-height: 1.3;
         }
 
@@ -538,72 +603,80 @@
         }
 
         .project h3 a:hover {
-            color: var(--red);
+            color: var(--link);
         }
 
         .project p {
             max-width: 760px;
 
-            margin: 0 0 14px;
+            margin: 0 0 13px;
 
-            color: var(--secondary-text);
+            color: var(--secondary);
         }
 
         .tags {
+            margin: 0 0 10px;
+
             color: var(--muted);
 
-            font-family: "Courier New", Courier, monospace;
-            font-size: 14px;
+            font-family:
+                "Courier New",
+                Courier,
+                monospace;
+
+            font-size: 13px;
         }
 
         .project-link {
-            display: inline-block;
+            color: var(--link);
 
-            color: var(--red);
-
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
 
             text-decoration: none;
         }
 
         .project-link::after {
-            content: " →";
+            content: "  →";
         }
 
         .project-link:hover {
-            color: var(--red-dark);
+            color: var(--link-hover);
 
             text-decoration: underline;
         }
 
 
-        /* ----------------------------------------
+        /* ==================================================
            ABOUT
-        ---------------------------------------- */
+        ================================================== */
 
         .about-content {
-            max-width: 790px;
+            max-width: 800px;
         }
 
         .about-content p {
-            margin: 0 0 18px;
+            margin: 0 0 17px;
 
-            color: var(--secondary-text);
+            color: var(--secondary);
 
             font-size: 18px;
         }
 
 
-        /* ----------------------------------------
+        /* ==================================================
            FOOTER
-        ---------------------------------------- */
+        ================================================== */
 
         footer {
+            background: var(--header);
+        }
+
+        .footer-content {
             width: min(92%, var(--content-width));
 
             margin: 0 auto;
-            padding: 34px 0 50px;
+            padding: 30px 0;
 
             display: flex;
             align-items: center;
@@ -611,27 +684,31 @@
 
             gap: 20px;
 
-            color: var(--muted);
+            color: #aeb9c4;
 
-            font-size: 14px;
+            font-size: 13px;
         }
 
-        footer p {
+        .footer-content p {
             margin: 0;
         }
 
         .footer-brand {
-            color: var(--red);
+            color: #ffffff;
 
             font-weight: 700;
         }
 
+        .footer-brand span {
+            color: var(--accent);
+        }
 
-        /* ----------------------------------------
+
+        /* ==================================================
            MOBILE
-        ---------------------------------------- */
+        ================================================== */
 
-        @media (max-width: 700px) {
+        @media (max-width: 720px) {
 
             body {
                 font-size: 16px;
@@ -645,13 +722,13 @@
                 flex-direction: column;
                 align-items: flex-start;
 
-                gap: 8px;
+                gap: 7px;
             }
 
             nav {
                 width: 100%;
 
-                gap: 22px;
+                gap: 20px;
 
                 overflow-x: auto;
             }
@@ -663,18 +740,18 @@
             }
 
             .intro {
-                padding-top: 54px;
-                padding-bottom: 54px;
+                padding-top: 52px;
+                padding-bottom: 52px;
             }
 
             .intro h1 {
                 font-size: 46px;
 
-                letter-spacing: -1.5px;
+                letter-spacing: -1.8px;
             }
 
             .role-title {
-                font-size: 19px;
+                font-size: 18px;
             }
 
             .intro-text {
@@ -682,53 +759,40 @@
             }
 
             section {
-                padding: 50px 0;
+                padding: 48px 0;
             }
 
-            .section-title {
-                margin-bottom: 30px;
+            .section-header {
+                grid-template-columns: 1fr;
+
+                gap: 5px;
             }
 
-            .section-title h2 {
+            .section-heading h2 {
                 font-size: 27px;
             }
 
-            .section-description {
-                margin-top: -10px;
-                margin-left: 0;
-            }
-
-            .experience {
-                padding: 22px 20px;
-            }
-
-            .experience-header {
+            .experience-heading {
                 flex-direction: column;
 
-                gap: 6px;
+                gap: 8px;
+            }
+
+            .experience-top,
+            .experience-body {
+                padding-right: 20px;
+                padding-left: 20px;
             }
 
             .skill-grid {
                 grid-template-columns: 1fr;
             }
 
-            .project {
-                padding: 22px 20px;
-
-                transform: none;
-            }
-
-            .project:hover {
-                transform: none;
-            }
-
-            footer {
-                padding-bottom: 42px;
-
+            .footer-content {
                 flex-direction: column;
                 align-items: flex-start;
 
-                gap: 3px;
+                gap: 4px;
             }
 
         }
@@ -745,17 +809,47 @@
 
         <div class="header-content">
 
-            <a class="logo" href="/">
-                <span class="logo-mark"></span>
-                InfraSynth Labs
+            <a class="brand" href="/">
+
+                <span class="brand-mark"></span>
+
+                <span class="brand-text">
+
+                    <span class="brand-name">
+                        Gage Campbell
+                    </span>
+
+                    <span class="brand-subtitle">
+                        InfraSynth Labs
+                    </span>
+
+                </span>
+
             </a>
 
+
             <nav aria-label="Main navigation">
-                <a href="/" class="active">Home</a>
-                <a href="#experience">Experience</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#about">About</a>
+
+                <a href="/" class="active">
+                    Home
+                </a>
+
+                <a href="#experience">
+                    Experience
+                </a>
+
+                <a href="#skills">
+                    Skills
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
             </nav>
 
         </div>
@@ -768,53 +862,66 @@
 
         <section class="intro">
 
-            <p class="eyebrow">
-                IT &amp; Network Infrastructure
+            <p class="intro-label">
+                Network Operations / IT Infrastructure
             </p>
+
 
             <h1>
                 Gage Campbell
             </h1>
 
+
             <p class="role-title">
                 Network Operations · Infrastructure · Systems Support
             </p>
 
-            <p class="intro-text">
-                I'm an IT professional with experience in network operations,
-                technical support leadership, and enterprise IT environments.
-                My background includes Tier 2 network troubleshooting, incident
-                response, identity and access management, and supporting the
-                systems people rely on every day.
-            </p>
 
             <p class="intro-text">
-                Outside of work, I maintain a homelab where I work with
-                virtualization, Linux servers, Docker, pfSense, and network
-                segmentation.
+                I'm an IT professional with experience in network operations,
+                enterprise technical support, and IT team leadership.
+                My background includes Tier 2 network troubleshooting,
+                incident response, identity and access administration,
+                and supporting business-critical technology.
             </p>
+
+
+            <p class="intro-text">
+                My primary interests are network infrastructure, servers,
+                systems administration, data center operations, and
+                hands-on technical environments.
+            </p>
+
 
             <div class="intro-actions">
 
-                <a class="button" href="#experience">
-                    View Experience
+                <a
+                    class="button"
+                    href="#experience"
+                >
+                    Professional Experience
                 </a>
 
-                <a class="button button-secondary" href="/resume.pdf">
+                <a
+                    class="button button-secondary"
+                    href="/resume.pdf"
+                >
                     View Resume
                 </a>
 
             </div>
 
-            <div class="career-focus">
 
-                <span>
-                    Career Focus
-                </span>
+            <div class="career-summary">
+
+                <strong>
+                    Current career focus
+                </strong>
 
                 <p>
-                    Infrastructure, network operations, systems administration,
-                    data center operations, and other hands-on technical roles.
+                    Network infrastructure, NOC operations, systems
+                    administration, data center operations, and technical
+                    infrastructure roles.
                 </p>
 
             </div>
@@ -824,156 +931,201 @@
 
         <section id="experience">
 
-            <div class="section-title">
+            <div class="section-header">
 
-                <span class="section-number">
-                    01
+                <span class="section-index">
+                    01 /
                 </span>
 
-                <h2>
-                    Experience
-                </h2>
+                <div class="section-heading">
+
+                    <h2>
+                        Professional Experience
+                    </h2>
+
+                    <p>
+                        Experience supporting enterprise IT environments,
+                        network operations, incident response, and technical
+                        support teams.
+                    </p>
+
+                </div>
 
             </div>
 
-            <p class="section-description">
-                My professional background combines network operations with
-                day-to-day technical leadership and enterprise IT support.
-            </p>
+
+            <div class="experience-list">
 
 
-            <article class="experience">
+                <article class="experience">
 
-                <div class="experience-header">
+                    <div class="experience-top">
 
-                    <div>
+                        <div class="experience-heading">
 
-                        <h3>
-                            IT Support Team Lead
-                        </h3>
+                            <div>
 
-                        <p class="company">
-                            BHI
-                        </p>
+                                <h3>
+                                    IT Support Team Lead
+                                </h3>
 
-                    </div>
+                                <p class="company">
+                                    BHI
+                                </p>
 
-                    <span class="experience-date">
-                        Mar 2025 – Present
-                    </span>
+                            </div>
 
-                </div>
+                            <span class="experience-date">
+                                MAR 2025 — PRESENT
+                            </span>
 
-                <ul>
-                    <li>
-                        Lead a four-person IT support team and coordinate daily
-                        workloads, escalations, and technical support operations.
-                    </li>
-
-                    <li>
-                        Administer user accounts and access through Active
-                        Directory, Google Workspace, and Microsoft 365.
-                    </li>
-
-                    <li>
-                        Support MFA, user provisioning, and identity and access
-                        management processes.
-                    </li>
-
-                    <li>
-                        Serve as an escalation point for hardware, software,
-                        network, and mobile device issues.
-                    </li>
-
-                    <li>
-                        Work with vendors and internal departments to resolve
-                        technical problems and maintain reliable IT operations.
-                    </li>
-
-                </ul>
-
-            </article>
-
-
-            <article class="experience">
-
-                <div class="experience-header">
-
-                    <div>
-
-                        <h3>
-                            NOC Technician
-                        </h3>
-
-                        <p class="company">
-                            Strata Networks
-                        </p>
+                        </div>
 
                     </div>
 
-                    <span class="experience-date">
-                        Oct 2022 – Mar 2025
-                    </span>
 
-                </div>
+                    <div class="experience-body">
 
-                <ul>
-                    <li>
-                        Monitored network infrastructure and responded to alarms
-                        affecting customer and enterprise services.
-                    </li>
+                        <ul>
 
-                    <li>
-                        Performed Tier 2 troubleshooting for connectivity,
-                        service outages, and network performance issues.
-                    </li>
+                            <li>
+                                Lead a four-person IT support team and coordinate
+                                daily workloads, escalations, and technical
+                                support operations.
+                            </li>
 
-                    <li>
-                        Analyzed monitoring data to identify faults, trends, and
-                        service disruptions.
-                    </li>
+                            <li>
+                                Administer user accounts and access through
+                                Active Directory, Google Workspace, and
+                                Microsoft 365.
+                            </li>
 
-                    <li>
-                        Coordinated with field technicians and engineering teams
-                        during outage response and service restoration.
-                    </li>
+                            <li>
+                                Support MFA, user provisioning, and identity
+                                management processes.
+                            </li>
 
-                    <li>
-                        Documented incidents, troubleshooting steps, and
-                        resolutions for operational continuity.
-                    </li>
+                            <li>
+                                Serve as an escalation point for hardware,
+                                software, networking, and mobile device issues.
+                            </li>
 
-                </ul>
+                            <li>
+                                Coordinate with vendors and internal departments
+                                to maintain reliable business technology
+                                operations.
+                            </li>
 
-            </article>
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+                <article class="experience">
+
+                    <div class="experience-top">
+
+                        <div class="experience-heading">
+
+                            <div>
+
+                                <h3>
+                                    NOC Technician
+                                </h3>
+
+                                <p class="company">
+                                    Strata Networks
+                                </p>
+
+                            </div>
+
+                            <span class="experience-date">
+                                OCT 2022 — MAR 2025
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="experience-body">
+
+                        <ul>
+
+                            <li>
+                                Monitored network infrastructure and responded
+                                to service-impacting alarms affecting customer
+                                and enterprise services.
+                            </li>
+
+                            <li>
+                                Performed Tier 2 troubleshooting and diagnostics
+                                for connectivity, service outages, and network
+                                performance issues.
+                            </li>
+
+                            <li>
+                                Analyzed network monitoring data to identify
+                                faults, trends, and service disruptions.
+                            </li>
+
+                            <li>
+                                Coordinated with field technicians and
+                                engineering teams during outage response and
+                                service restoration.
+                            </li>
+
+                            <li>
+                                Documented incidents, troubleshooting procedures,
+                                and technical resolutions.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+            </div>
 
         </section>
 
 
         <section id="skills">
 
-            <div class="section-title">
+            <div class="section-header">
 
-                <span class="section-number">
-                    02
+                <span class="section-index">
+                    02 /
                 </span>
 
-                <h2>
-                    Technical Background
-                </h2>
+                <div class="section-heading">
+
+                    <h2>
+                        Technical Background
+                    </h2>
+
+                    <p>
+                        Technologies and operational areas I have worked with
+                        professionally or through hands-on lab environments.
+                    </p>
+
+                </div>
 
             </div>
-
-            <p class="section-description">
-                Technologies and areas I have worked with professionally or
-                through hands-on lab environments.
-            </p>
 
 
             <div class="skill-grid">
 
 
-                <div class="skill-group">
+                <article class="skill-group">
+
+                    <p class="skill-label">
+                        NET / 01
+                    </p>
 
                     <h3>
                         Networking
@@ -982,28 +1134,36 @@
                     <p>
                         TCP/IP, DNS, DHCP, VLANs, network troubleshooting,
                         pfSense, firewall policies, Meraki, and Cisco
-                        fundamentals.
+                        networking fundamentals.
                     </p>
 
-                </div>
+                </article>
 
 
-                <div class="skill-group">
+                <article class="skill-group">
+
+                    <p class="skill-label">
+                        SYS / 02
+                    </p>
 
                     <h3>
                         Systems &amp; Infrastructure
                     </h3>
 
                     <p>
-                        Ubuntu Server, Linux, Proxmox, virtualization, Docker,
-                        self-hosted services, server administration, and
-                        infrastructure troubleshooting.
+                        Linux, Ubuntu Server, Proxmox, virtualization,
+                        Docker, self-hosted services, server administration,
+                        and infrastructure troubleshooting.
                     </p>
 
-                </div>
+                </article>
 
 
-                <div class="skill-group">
+                <article class="skill-group">
+
+                    <p class="skill-label">
+                        IAM / 03
+                    </p>
 
                     <h3>
                         Identity &amp; Administration
@@ -1012,25 +1172,29 @@
                     <p>
                         Active Directory, Microsoft 365, Google Workspace,
                         MFA, user provisioning, and identity and access
-                        management.
+                        administration.
                     </p>
 
-                </div>
+                </article>
 
 
-                <div class="skill-group">
+                <article class="skill-group">
+
+                    <p class="skill-label">
+                        OPS / 04
+                    </p>
 
                     <h3>
-                        Operations
+                        Technical Operations
                     </h3>
 
                     <p>
-                        Tier 1 and Tier 2 support, incident response, technical
-                        escalation, network monitoring, outage coordination,
-                        and technical documentation.
+                        Tier 1 and Tier 2 support, incident response,
+                        escalation management, network monitoring, outage
+                        coordination, and technical documentation.
                     </p>
 
-                </div>
+                </article>
 
 
             </div>
@@ -1043,8 +1207,8 @@
                 </h3>
 
                 <p>
-                    CompTIA A+ · CompTIA Network+ · SkillsUSA Utah Gold Medalist
-                    in Cyber Security and Information Technology
+                    CompTIA A+ · CompTIA Network+ · SkillsUSA Utah Gold
+                    Medalist in Cyber Security and Information Technology
                 </p>
 
             </div>
@@ -1054,149 +1218,170 @@
 
         <section id="projects">
 
-            <div class="section-title">
+            <div class="section-header">
 
-                <span class="section-number">
-                    03
+                <span class="section-index">
+                    03 /
                 </span>
 
-                <h2>
-                    Selected Projects
-                </h2>
+                <div class="section-heading">
+
+                    <h2>
+                        Infrastructure Projects
+                    </h2>
+
+                    <p>
+                        Hands-on projects used to build practical experience
+                        with networking, servers, virtualization, and Linux
+                        infrastructure.
+                    </p>
+
+                </div>
 
             </div>
 
-            <p class="section-description">
-                I use my lab to get hands-on experience with infrastructure
-                outside of my day-to-day work.
-            </p>
+
+            <div class="project-list">
 
 
-            <article class="project">
+                <article class="project">
 
-                <h3>
-                    <a href="/projects/homelab.html">
-                        Home Network and pfSense
+                    <h3>
+                        <a href="/projects/homelab.html">
+                            Home Network and pfSense
+                        </a>
+                    </h3>
+
+                    <p>
+                        A segmented home network using pfSense for routing,
+                        firewall management, DHCP, and network isolation.
+                        The environment is used for testing network changes
+                        and troubleshooting real infrastructure issues.
+                    </p>
+
+                    <p class="tags">
+                        PFSENSE / VLANS / FIREWALL / DNS / DHCP
+                    </p>
+
+                    <a
+                        class="project-link"
+                        href="/projects/homelab.html"
+                    >
+                        Project details
                     </a>
-                </h3>
 
-                <p>
-                    An ongoing rebuild of my home network using pfSense for
-                    routing and firewall management. The environment includes
-                    network segmentation, VLANs, DHCP, DNS, and isolated
-                    infrastructure and service networks.
-                </p>
-
-                <p class="tags">
-                    pfSense / VLANs / Firewall / DNS / DHCP
-                </p>
-
-                <a
-                    class="project-link"
-                    href="/projects/homelab.html"
-                >
-                    View project
-                </a>
-
-            </article>
+                </article>
 
 
-            <article class="project">
+                <article class="project">
 
-                <h3>
-                    <a href="/projects/infrastructure.html">
-                        HomeSynthLab Infrastructure
+                    <h3>
+                        <a href="/projects/infrastructure.html">
+                            HomeSynthLab Infrastructure
+                        </a>
+                    </h3>
+
+                    <p>
+                        A personal server environment built around Proxmox
+                        and Ubuntu Server. The lab is used for virtualization,
+                        Linux administration, network testing, and deploying
+                        self-hosted services.
+                    </p>
+
+                    <p class="tags">
+                        PROXMOX / UBUNTU / LINUX / VIRTUALIZATION
+                    </p>
+
+                    <a
+                        class="project-link"
+                        href="/projects/infrastructure.html"
+                    >
+                        Project details
                     </a>
-                </h3>
 
-                <p>
-                    My personal server environment built around Proxmox and
-                    Ubuntu Server. I use the lab for virtualization, Linux
-                    administration, networking, Docker, and testing
-                    self-hosted services.
-                </p>
-
-                <p class="tags">
-                    Proxmox / Ubuntu Server / Linux / Virtualization
-                </p>
-
-                <a
-                    class="project-link"
-                    href="/projects/infrastructure.html"
-                >
-                    View project
-                </a>
-
-            </article>
+                </article>
 
 
-            <article class="project">
+                <article class="project">
 
-                <h3>
-                    <a href="/projects/server-infrastructure.html">
-                        Docker and Server Infrastructure
+                    <h3>
+                        <a href="/projects/server-infrastructure.html">
+                            Docker and Server Infrastructure
+                        </a>
+                    </h3>
+
+                    <p>
+                        Containerized server environments used to work with
+                        service deployment, persistent storage, networking,
+                        system performance, and ongoing server administration.
+                    </p>
+
+                    <p class="tags">
+                        DOCKER / LINUX / NETWORKING / SERVER ADMINISTRATION
+                    </p>
+
+                    <a
+                        class="project-link"
+                        href="/projects/server-infrastructure.html"
+                    >
+                        Project details
                     </a>
-                </h3>
 
-                <p>
-                    A collection of containerized services and hosted server
-                    environments used to experiment with service deployment,
-                    persistent storage, networking, performance troubleshooting,
-                    and ongoing administration.
-                </p>
+                </article>
 
-                <p class="tags">
-                    Docker / Linux / Networking / Server Administration
-                </p>
 
-                <a
-                    class="project-link"
-                    href="/projects/server-infrastructure.html"
-                >
-                    View project
-                </a>
-
-            </article>
+            </div>
 
         </section>
 
 
-        <section
-            id="about"
-            class="about-content"
-        >
+        <section id="about">
 
-            <div class="section-title">
+            <div class="section-header">
 
-                <span class="section-number">
-                    04
+                <span class="section-index">
+                    04 /
                 </span>
 
-                <h2>
-                    About Me
-                </h2>
+                <div class="section-heading">
+
+                    <h2>
+                        About Me
+                    </h2>
+
+                </div>
 
             </div>
 
-            <p>
-                I'm Gage Campbell. I started in network operations and later
-                moved into IT support leadership. Through both roles, I found
-                that the work I enjoy most is closer to the infrastructure:
-                networks, servers, systems, and troubleshooting problems that
-                require digging past the obvious answer.
-            </p>
 
-            <p>
-                I tend to learn best by building things myself. My homelab has
-                become the place where I test network changes, deploy Linux
-                servers, work with containers, and learn technologies that I
-                want more exposure to professionally.
-            </p>
+            <div class="about-content">
 
-            <p>
-                I'm continuing to build toward infrastructure, networking,
-                systems administration, and data center work.
-            </p>
+                <p>
+                    I started my career in network operations, where I worked
+                    with monitoring, service-impacting incidents, Tier 2
+                    troubleshooting, and outage response.
+                </p>
+
+                <p>
+                    I later moved into IT support leadership, taking on team
+                    coordination, escalation management, identity
+                    administration, and broader enterprise IT support.
+                </p>
+
+                <p>
+                    The part of technology I enjoy most is infrastructure.
+                    I prefer working with networks, servers, systems, and
+                    technical problems that require investigation rather than
+                    simply following a script.
+                </p>
+
+                <p>
+                    I'm continuing to build my career toward network
+                    infrastructure, systems administration, and data center
+                    operations.
+                </p>
+
+            </div>
 
         </section>
 
@@ -1206,13 +1391,17 @@
 
     <footer>
 
-        <p>
-            © 2026 Gage Campbell
-        </p>
+        <div class="footer-content">
 
-        <p class="footer-brand">
-            InfraSynth Labs
-        </p>
+            <p>
+                © 2026 Gage Campbell
+            </p>
+
+            <p class="footer-brand">
+                <span>//</span> InfraSynth Labs
+            </p>
+
+        </div>
 
     </footer>
 
