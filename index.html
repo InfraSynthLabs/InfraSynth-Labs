@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
@@ -12,30 +16,614 @@
 
     <title>Gage Campbell | InfraSynth Labs</title>
 
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        :root {
+            --background: #f4f2f0;
+            --surface: #ffffff;
+
+            --text: #1c1c1f;
+            --secondary-text: #454549;
+            --muted: #68686e;
+
+            --border: #d5d0cc;
+
+            --red: #a71924;
+            --red-dark: #741119;
+            --red-light: #f5e5e7;
+
+            --content-width: 1080px;
+        }
+
+
+        /* ----------------------------------------
+           GENERAL
+        ---------------------------------------- */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            background: var(--background);
+            color: var(--text);
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            line-height: 1.6;
+
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        ::selection {
+            background: var(--red);
+            color: white;
+        }
+
+
+        /* ----------------------------------------
+           HEADER
+        ---------------------------------------- */
+
+        header {
+            background: var(--surface);
+
+            border-top: 5px solid var(--red);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            width: min(92%, var(--content-width));
+            min-height: 76px;
+
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            color: var(--text);
+
+            font-size: 21px;
+            font-weight: 700;
+
+            text-decoration: none;
+        }
+
+        .logo-mark {
+            width: 13px;
+            height: 13px;
+
+            background: var(--red);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+
+            gap: 28px;
+        }
+
+        nav a {
+            position: relative;
+
+            padding: 26px 0 24px;
+
+            color: var(--secondary-text);
+
+            font-size: 15px;
+            font-weight: 600;
+
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: var(--red);
+        }
+
+        nav a.active {
+            color: var(--red);
+        }
+
+        nav a.active::after {
+            content: "";
+
+            position: absolute;
+
+            right: 0;
+            bottom: -1px;
+            left: 0;
+
+            height: 3px;
+
+            background: var(--red);
+        }
+
+
+        /* ----------------------------------------
+           MAIN
+        ---------------------------------------- */
+
+        main {
+            width: min(92%, var(--content-width));
+
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 64px 0;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        /* ----------------------------------------
+           INTRO
+        ---------------------------------------- */
+
+        .intro {
+            padding-top: 78px;
+            padding-bottom: 72px;
+        }
+
+        .eyebrow {
+            margin: 0 0 14px;
+
+            color: var(--red);
+
+            font-size: 14px;
+            font-weight: 700;
+
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .intro h1 {
+            max-width: 760px;
+
+            margin: 0 0 24px;
+
+            color: var(--text);
+
+            font-size: clamp(44px, 6vw, 66px);
+            font-weight: 700;
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+        }
+
+        .intro-text {
+            max-width: 760px;
+
+            margin: 0 0 16px;
+
+            color: var(--secondary-text);
+
+            font-size: 20px;
+            line-height: 1.55;
+        }
+
+        .current {
+            max-width: 760px;
+
+            margin-top: 34px;
+            padding: 20px 22px;
+
+            background: var(--red-light);
+
+            border: 1px solid #dfbfc3;
+            border-left: 5px solid var(--red);
+        }
+
+        .current span {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: var(--red-dark);
+
+            font-size: 14px;
+            font-weight: 700;
+
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .current p {
+            margin: 0;
+
+            color: var(--secondary-text);
+
+            font-size: 16px;
+        }
+
+
+        /* ----------------------------------------
+           SECTION HEADINGS
+        ---------------------------------------- */
+
+        .section-title {
+            display: flex;
+            align-items: center;
+
+            gap: 14px;
+
+            margin-bottom: 36px;
+        }
+
+        .section-number {
+            width: 38px;
+            height: 38px;
+
+            flex: 0 0 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--red);
+
+            color: white;
+
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .section-title h2 {
+            margin: 0;
+
+            color: var(--text);
+
+            font-size: 31px;
+            line-height: 1.2;
+
+            letter-spacing: -0.5px;
+        }
+
+        .section-description {
+            max-width: 720px;
+
+            margin: -14px 0 34px 52px;
+
+            color: var(--muted);
+        }
+
+
+        /* ----------------------------------------
+           PROJECTS
+        ---------------------------------------- */
+
+        .project {
+            max-width: 820px;
+
+            margin: 0 0 24px;
+            padding: 26px 28px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--border);
+
+            transition:
+                border-color 0.15s ease,
+                transform 0.15s ease;
+        }
+
+        .project:hover {
+            border-left-color: var(--red);
+
+            transform: translateX(3px);
+        }
+
+        .project h3 {
+            margin: 0 0 10px;
+
+            color: var(--text);
+
+            font-size: 24px;
+            line-height: 1.3;
+
+            letter-spacing: -0.2px;
+        }
+
+        .project h3 a {
+            text-decoration: none;
+        }
+
+        .project h3 a:hover {
+            color: var(--red);
+        }
+
+        .project p {
+            max-width: 730px;
+
+            margin: 0 0 14px;
+
+            color: var(--secondary-text);
+        }
+
+        .tags {
+            color: var(--muted);
+
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+        }
+
+        .project-link {
+            display: inline-block;
+
+            color: var(--red);
+
+            font-size: 15px;
+            font-weight: 700;
+
+            text-decoration: none;
+        }
+
+        .project-link::after {
+            content: " →";
+        }
+
+        .project-link:hover {
+            color: var(--red-dark);
+
+            text-decoration: underline;
+        }
+
+
+        /* ----------------------------------------
+           NOTES
+        ---------------------------------------- */
+
+        .notes {
+            max-width: 820px;
+
+            margin-bottom: 28px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+        }
+
+        .note {
+            display: grid;
+
+            grid-template-columns: 120px minmax(0, 1fr);
+
+            gap: 22px;
+
+            padding: 20px 24px;
+
+            border-bottom: 1px solid var(--border);
+
+            text-decoration: none;
+        }
+
+        .note:last-child {
+            border-bottom: 0;
+        }
+
+        .note:hover {
+            background: var(--red-light);
+        }
+
+        .note time {
+            color: var(--red);
+
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .note span {
+            color: var(--text);
+
+            line-height: 1.5;
+        }
+
+
+        /* ----------------------------------------
+           ABOUT
+        ---------------------------------------- */
+
+        .about-preview p {
+            max-width: 760px;
+
+            margin: 0 0 17px;
+
+            color: var(--secondary-text);
+        }
+
+        .about-preview .project-link {
+            margin-top: 8px;
+        }
+
+
+        /* ----------------------------------------
+           FOOTER
+        ---------------------------------------- */
+
+        footer {
+            width: min(92%, var(--content-width));
+
+            margin: 0 auto;
+            padding: 34px 0 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .footer-brand {
+            color: var(--red);
+
+            font-weight: 700;
+        }
+
+
+        /* ----------------------------------------
+           MOBILE
+        ---------------------------------------- */
+
+        @media (max-width: 700px) {
+
+            body {
+                font-size: 16px;
+            }
+
+            .header-content {
+                min-height: auto;
+
+                padding-top: 18px;
+
+                flex-direction: column;
+                align-items: flex-start;
+
+                gap: 8px;
+            }
+
+            nav {
+                width: 100%;
+
+                gap: 22px;
+
+                overflow-x: auto;
+            }
+
+            nav a {
+                padding: 10px 0 17px;
+
+                white-space: nowrap;
+            }
+
+            .intro {
+                padding-top: 54px;
+                padding-bottom: 54px;
+            }
+
+            .intro h1 {
+                margin-bottom: 22px;
+
+                font-size: 44px;
+
+                letter-spacing: -1.5px;
+            }
+
+            .intro-text {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                margin-bottom: 30px;
+            }
+
+            .section-title h2 {
+                font-size: 27px;
+            }
+
+            .section-description {
+                margin-top: -10px;
+                margin-left: 0;
+            }
+
+            .project {
+                padding: 22px 20px;
+
+                transform: none;
+            }
+
+            .project:hover {
+                transform: none;
+            }
+
+            .project h3 {
+                font-size: 22px;
+            }
+
+            .note {
+                grid-template-columns: 1fr;
+
+                gap: 3px;
+
+                padding: 18px 20px;
+            }
+
+            footer {
+                padding-bottom: 42px;
+
+                flex-direction: column;
+                align-items: flex-start;
+
+                gap: 3px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
+
     <header>
+
         <div class="header-content">
 
             <a class="logo" href="/">
+                <span class="logo-mark"></span>
                 InfraSynth Labs
             </a>
 
             <nav aria-label="Main navigation">
                 <a href="/" class="active">Home</a>
-                <a href="/projects/">Projects</a>
-                <a href="/notes/">Notes</a>
-                <a href="/about/">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#notes">Notes</a>
+                <a href="#about">About</a>
             </nav>
 
         </div>
+
     </header>
 
 
     <main>
+
 
         <section class="intro">
 
@@ -43,7 +631,9 @@
                 IT &amp; Network Infrastructure
             </p>
 
-            <h1>Hi, I'm Gage.</h1>
+            <h1>
+                Hi, I'm Gage.
+            </h1>
 
             <p class="intro-text">
                 I work in IT and network operations. Most of my free time
@@ -57,26 +647,37 @@
             </p>
 
             <div class="current">
-                <span>Currently working on</span>
+
+                <span>
+                    Currently working on
+                </span>
 
                 <p>
                     My homelab, a 1989 Toyota Supra, and an ongoing wearable
                     electronics project.
                 </p>
+
             </div>
 
         </section>
 
 
-        <section>
+        <section id="projects">
 
             <div class="section-title">
-                <span>01</span>
-                <h2>Projects</h2>
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <h2>
+                    Projects
+                </h2>
+
             </div>
 
 
-            <article>
+            <article class="project">
 
                 <h3>
                     <a href="/projects/homelab.html">
@@ -94,14 +695,17 @@
                     pfSense / VLANs / DHCP / DNS
                 </p>
 
-                <a class="project-link" href="/projects/homelab.html">
+                <a
+                    class="project-link"
+                    href="/projects/homelab.html"
+                >
                     View project
                 </a>
 
             </article>
 
 
-            <article>
+            <article class="project">
 
                 <h3>
                     <a href="/projects/minecraft-server.html">
@@ -130,7 +734,7 @@
             </article>
 
 
-            <article>
+            <article class="project">
 
                 <h3>
                     <a href="/projects/supra.html">
@@ -148,14 +752,17 @@
                     Restoration / Diagnostics / Mechanical
                 </p>
 
-                <a class="project-link" href="/projects/supra.html">
+                <a
+                    class="project-link"
+                    href="/projects/supra.html"
+                >
                     View project
                 </a>
 
             </article>
 
 
-            <article>
+            <article class="project">
 
                 <h3>
                     <a href="/projects/wearable-electronics.html">
@@ -185,11 +792,18 @@
         </section>
 
 
-        <section>
+        <section id="notes">
 
             <div class="section-title">
-                <span>02</span>
-                <h2>Notes</h2>
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <h2>
+                    Notes
+                </h2>
+
             </div>
 
             <p class="section-description">
@@ -197,46 +811,76 @@
                 and things worth documenting before I forget them.
             </p>
 
+
             <div class="notes">
 
-                <a href="/notes/gigabit-speed-troubleshooting.html">
-                    <time datetime="2026-07">Jul 2026</time>
+                <a
+                    class="note"
+                    href="/notes/gigabit-speed-troubleshooting.html"
+                >
+
+                    <time datetime="2026-07">
+                        Jul 2026
+                    </time>
 
                     <span>
                         Troubleshooting a sudden drop from gigabit speeds
                     </span>
+
                 </a>
 
-                <a href="/notes/pfsense-segmentation.html">
-                    <time datetime="2026-06">Jun 2026</time>
+
+                <a
+                    class="note"
+                    href="/notes/pfsense-segmentation.html"
+                >
+
+                    <time datetime="2026-06">
+                        Jun 2026
+                    </time>
 
                     <span>
                         Rebuilding my network around pfSense and VLANs
                     </span>
+
                 </a>
 
-                <a href="/notes/minecraft-server-performance.html">
-                    <time datetime="2026-06">Jun 2026</time>
+
+                <a
+                    class="note"
+                    href="/notes/minecraft-server-performance.html"
+                >
+
+                    <time datetime="2026-06">
+                        Jun 2026
+                    </time>
 
                     <span>
                         Tracking down modded Minecraft server performance issues
                     </span>
+
                 </a>
 
             </div>
 
-            <a class="project-link" href="/notes/">
-                View all notes
-            </a>
-
         </section>
 
 
-        <section class="about-preview">
+        <section
+            id="about"
+            class="about-preview"
+        >
 
             <div class="section-title">
-                <span>03</span>
-                <h2>A little about me</h2>
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <h2>
+                    A little about me
+                </h2>
+
             </div>
 
             <p>
@@ -250,11 +894,8 @@
                 and figuring out the problems as they happen.
             </p>
 
-            <a class="project-link" href="/about/">
-                More about me
-            </a>
-
         </section>
+
 
     </main>
 
@@ -265,11 +906,12 @@
             © 2026 Gage Campbell
         </p>
 
-        <p>
+        <p class="footer-brand">
             InfraSynth Labs
         </p>
 
     </footer>
+
 
 </body>
 
